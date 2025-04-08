@@ -50,18 +50,15 @@ const HeroSection = () => {
           </div>
         </div>
         <div className="flex flex-1 gap-8">
-          <div className="w-[250px] flex-shrink-0">
-            <Image
-              src="/hero-1.jpg"
-              alt="Hero image"
-              width={250}
-              height={650}
-              className="h-full w-full rounded-tl-[200px] rounded-tr-3xl rounded-b-3xl object-cover"
-              priority
-            />
-          </div>
+          <Image
+            src="/hero-1.jpg"
+            alt="Hero image"
+            width={250}
+            height={650}
+            className="h-auto w-[250px] rounded-tl-[200px] rounded-tr-3xl rounded-b-3xl object-cover"
+            priority
+          />
 
-          {/* Fluid image (fills remaining space) */}
           <div className="flex-1">
             <Image
               src="/hero-2.jpg"
