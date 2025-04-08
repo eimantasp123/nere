@@ -49,26 +49,25 @@ const HeroSection = () => {
             </div>
           </div>
         </div>
-        <div className="flex flex-1 gap-8">
+        <div className="flex h-[600px] flex-1 gap-8">
           <Image
             src="/hero-1.jpg"
             alt="Hero image"
             width={250}
             height={650}
-            className="h-auto w-[250px] rounded-tl-[200px] rounded-tr-3xl rounded-b-3xl object-cover"
+            className="rounded-tl-[200px] rounded-tr-3xl rounded-b-3xl object-cover"
             priority
           />
 
-          <div className="flex-1">
-            <Image
-              src="/hero-2.jpg"
-              alt="Hero image"
-              width={600}
-              height={650}
-              className="h-full w-full rounded-tl-[200px] rounded-tr-3xl rounded-b-3xl object-cover"
-              priority
-            />
-          </div>
+          <Image
+            src="/hero-2.jpg"
+            alt="Hero image"
+            width={352}
+            height={650}
+            sizes="(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 35vw"
+            className="rounded-tl-[200px] rounded-tr-3xl rounded-b-3xl object-cover"
+            priority
+          />
         </div>
       </div>
     </section>
