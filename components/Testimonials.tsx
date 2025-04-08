@@ -23,7 +23,7 @@ const Testimonials = () => {
             >
               <StarRating rating={4.5} />
               <h1 className="font-marcellus text-2xl leading-tight">
-                I've found my sanctuary at this yoga studio
+                Ive found my sanctuary at this yoga studio
               </h1>
               <p className="text-text leading-[28px]">
                 Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit

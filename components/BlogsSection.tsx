@@ -5,13 +5,23 @@ const BlogsSection = () => {
   return (
     <section id="services" className="bg-background-primary mt-10 py-20">
       <div className="container mx-auto">
-        <div className="space-y-4 px-4 py-6 text-center">
-          <h4 className="font-jakarta text-primary-dark text-sm font-bold tracking-[5px] uppercase">
-            Blog & News
-          </h4>
-          <h1 className="font-marcellus mb-10 text-5xl leading-tight">
-            Our Articles About Yoga
-          </h1>
+        <div className="px-4 py-6">
+          <div className="mb-8 flex items-center justify-between gap-8">
+            <div className="space-y-4">
+              <h4 className="font-jakarta text-primary-dark text-sm font-bold tracking-[5px] uppercase">
+                Blog & News
+              </h4>
+              <h1 className="font-marcellus text-5xl leading-tight">
+                Our Articles About Yoga
+              </h1>
+            </div>
+            <a
+              href="#contacts"
+              className="hover:bg-secondary rounded-full bg-neutral-800 px-10 py-3 text-sm text-white shadow-sm transition-colors duration-200 ease-in-out hover:text-black"
+            >
+              Visos naujienos
+            </a>
+          </div>
           <div className="flex justify-between gap-8 pt-8">
             {Array.from({ length: 3 }, (_, index) => (
               <div
