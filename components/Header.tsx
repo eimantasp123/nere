@@ -17,7 +17,7 @@ const links = [
   { href: "#about-me", label: "Apie mane" },
   { href: "#services", label: "Paslaugos" },
   { href: "#contacts", label: "Kontaktai" },
-  { href: "/dashboard", label: "Kliento portalas" },
+  { href: "/", label: "Kliento portalas" },
 ];
 
 const Header = () => {

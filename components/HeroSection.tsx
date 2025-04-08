@@ -1,24 +1,27 @@
 import { Check } from "lucide-react";
 import Image from "next/image";
 
-const HeroSection = () => {
+async function HeroSection() {
+  const res = await fetch(
+    "http://localhost:1337/api/home-page-content?populate=hero",
+    {
+      next: { revalidate: 2 }, // ISR example
+    },
+  );
+  const { data } = await res.json();
+
   return (
     <section id="home" className="bg-background-primary">
       <div className="container mx-auto flex items-center gap-16 px-4 py-14">
         <div className="relative flex-1 space-y-6">
           <h4 className="font-jakarta text-primary-dark text-sm font-bold tracking-[5px] uppercase">
-            Welcome to Sparka
+            {data.heroSubtitle}
           </h4>
           <h1 className="font-marcellus mb-10 text-6xl leading-tight">
-            Awaken Your Potential Through Yoga
+            {data.heroTitle}
           </h1>
           <hr className="h-[2px] w-24" />
-          <p className="text-text leading-[28px]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-            tellus, luctus nec ullamcorper. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper.
-          </p>
-
+          <p className="text-text leading-[28px]">{data.heroDescription}</p>
           <div className="flex gap-4">
             <a
               href="#services"
@@ -53,7 +56,7 @@ const HeroSection = () => {
           {/* First image (30%) */}
           <div className="h-full w-[40%] overflow-hidden">
             <Image
-              src="/hero-1.jpg"
+              src={`http://localhost:1337${data.hero[0].url}`}
               alt="Hero image"
               width={300}
               height={600}
@@ -68,7 +71,7 @@ const HeroSection = () => {
           {/* Second image (70%) */}
           <div className="h-full w-[60%] overflow-hidden">
             <Image
-              src="/hero-2.jpg"
+              src={`http://localhost:1337${data.hero[1].url}`}
               alt="Hero image"
               width={700}
               height={600}
@@ -83,6 +86,6 @@ const HeroSection = () => {
       </div>
     </section>
   );
-};
+}
 
 export default HeroSection;
