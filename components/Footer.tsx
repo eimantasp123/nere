@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { usePathname, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 const links = [
   { href: "#home", label: "Pradžia" },
@@ -11,21 +11,13 @@ const links = [
 ];
 
 const Footer = () => {
-  const pathname = usePathname();
   const router = useRouter();
 
   const handleScroll = (id: string) => {
-    if (pathname === "/") {
-      // Already on home, just scroll
-      router.push(`/${id}`);
+    if (id === "#home") {
+      router.push("/");
     } else {
-      if (id === "#home") {
-        // If on another page and home is clicked, go to home
-        router.push("/");
-      } else {
-        // Not on home, go to homepage and scroll after
-        router.push(`/${id}`);
-      }
+      router.push(`/${id}`);
     }
   };
 

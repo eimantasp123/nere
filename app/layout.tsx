@@ -29,7 +29,7 @@ export default function RootLayout({
   return (
     <html lang="lt">
       <body
-        className={`${marcellus.variable} ${plusJakartaSans.variable} antialiased`}
+        className={`${marcellus.variable} ${plusJakartaSans.variable} pt-20 antialiased`}
       >
         <Header />
         {children}

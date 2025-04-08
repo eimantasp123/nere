@@ -1,15 +1,16 @@
 "use client";
 
+import { LogOut, UserCog } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
+import { useEffect, useRef, useState } from "react";
 import {
   DropdownMenu,
   DropdownMenuContent,
   DropdownMenuItem,
   DropdownMenuTrigger,
 } from "./ui/dropdown-menu";
-import { LogOut, UserCog } from "lucide-react";
 
 const links = [
   { href: "#home", label: "Pradžia" },
@@ -20,26 +21,57 @@ const links = [
 ];
 
 const Header = () => {
-  const pathname = usePathname();
   const router = useRouter();
+  const headerRef = useRef<HTMLDivElement>(null);
+  const [open, setOpen] = useState(false);
 
   const handleScroll = (id: string) => {
-    if (pathname === "/") {
-      // Already on home, just scroll
-      router.push(`/${id}`);
+    if (id === "#home") {
+      router.push("/");
     } else {
-      if (id === "#home") {
-        // If on another page and home is clicked, go to home
-        router.push("/");
-      } else {
-        // Not on home, go to homepage and scroll after
-        router.push(`/${id}`);
-      }
+      router.push(`/${id}`);
     }
   };
 
+  useEffect(() => {
+    const handleScroll = () => {
+      if (open) {
+        setOpen(false);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, [open]);
+
+  useEffect(() => {
+    let lastScrollTop = 0;
+
+    const handleScroll = () => {
+      const scrollTop = window.scrollY;
+
+      if (headerRef.current) {
+        if (scrollTop > lastScrollTop && scrollTop > 100) {
+          // scrolling down
+          headerRef.current.classList.add("-translate-y-full");
+        } else {
+          // scrolling up
+          headerRef.current.classList.remove("-translate-y-full");
+        }
+
+        lastScrollTop = scrollTop;
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
+
   return (
-    <section className="bg-background-primary font-jakarta sticky top-0 z-50 border-b-[1px] border-neutral-400/80">
+    <section
+      ref={headerRef}
+      className="bg-background-primary fixed top-0 z-50 w-full border-b border-neutral-400/80 transition-transform duration-300"
+    >
       <header className="container mx-auto flex items-center px-4 py-5">
         <div className="w-[200px]">
           <div className="flex w-26 items-center justify-center">
@@ -71,7 +103,7 @@ const Header = () => {
           >
             Rezervuoti laika
           </Link>
-          <DropdownMenu modal={false}>
+          <DropdownMenu open={open} onOpenChange={setOpen} modal={false}>
             <DropdownMenuTrigger asChild>
               <div className="relative size-10 cursor-pointer overflow-hidden rounded-full bg-neutral-200">
                 <Image
