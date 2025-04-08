@@ -1,3 +1,5 @@
+import Footer from "@/components/Footer";
+import Header from "@/components/Header";
 import type { Metadata } from "next";
 import { Marcellus, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
@@ -29,7 +31,9 @@ export default function RootLayout({
       <body
         className={`${marcellus.variable} ${plusJakartaSans.variable} antialiased`}
       >
+        <Header />
         {children}
+        <Footer />
       </body>
     </html>
   );

@@ -26,7 +26,7 @@ const BlogsSection = () => {
             {Array.from({ length: 3 }, (_, index) => (
               <div
                 key={index}
-                className="group bg-background overflow-hidden rounded-tl-3xl rounded-tr-[170px] rounded-b-3xl text-start shadow-md"
+                className="group bg-background overflow-hidden rounded-tl-3xl rounded-tr-[170px] rounded-b-3xl text-start shadow-md transition-shadow duration-300 ease-in-out hover:shadow-lg"
               >
                 <div className="relative h-[300px] w-full cursor-pointer overflow-hidden">
                   {/* Image */}

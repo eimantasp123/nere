@@ -1,30 +1,49 @@
+"use client";
+
 import Image from "next/image";
-import Link from "next/link";
+import { usePathname, useRouter } from "next/navigation";
 
 const links = [
-  { href: "/", label: "Pradžia" },
-  { href: "/about", label: "Apie mane" },
-  { href: "/services", label: "Paslaugos" },
-  { href: "/contact", label: "Kontaktai" },
+  { href: "#home", label: "Pradžia" },
+  { href: "#about-me", label: "Apie mane" },
+  { href: "#services", label: "Paslaugos" },
+  { href: "#contacts", label: "Kontaktai" },
 ];
 
 const Footer = () => {
+  const pathname = usePathname();
+  const router = useRouter();
+
+  const handleScroll = (id: string) => {
+    if (pathname === "/") {
+      // Already on home, just scroll
+      router.push(`/${id}`);
+    } else {
+      if (id === "#home") {
+        // If on another page and home is clicked, go to home
+        router.push("/");
+      } else {
+        // Not on home, go to homepage and scroll after
+        router.push(`/${id}`);
+      }
+    }
+  };
+
   return (
-    <section className="bg-neutral-900">
+    <section className="font-jakarta bg-neutral-900">
       <div className="container mx-auto flex items-center justify-between p-4">
         <nav className="flex flex-1">
-          <ul className="font-marcellus flex gap-10 text-sm text-nowrap">
+          <div className="font-marcellus flex gap-10 text-sm text-nowrap">
             {links.map((link) => (
-              <li key={link.href}>
-                <Link
-                  href={link.href}
-                  className="text-neutral-100 transition-colors duration-200 ease-out hover:text-neutral-300"
-                >
-                  {link.label}
-                </Link>
-              </li>
+              <button
+                key={link.href}
+                onClick={() => handleScroll(link.href)}
+                className="cursor-pointer text-neutral-100 transition-colors duration-200 ease-out hover:text-neutral-300"
+              >
+                {link.label}
+              </button>
             ))}
-          </ul>
+          </div>
         </nav>
         <div className="w-[150px]">
           <Image

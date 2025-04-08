@@ -46,12 +46,13 @@ const Services = () => {
                     Rezervuoti laika
                   </button>
                 </div>
-                <div className="relative min-h-[200px] w-[400px]">
+                <div className="relative h-[200px] w-[400px]">
                   <Image
                     src="/hero-1.jpg"
                     alt="Hero 1"
-                    fill
-                    className="rounded-tl-[150px] rounded-tr-3xl rounded-b-3xl object-cover"
+                    height={200}
+                    width={400}
+                    className="h-full w-full rounded-tl-[150px] rounded-tr-3xl rounded-b-3xl object-cover"
                     priority
                   />
                 </div>

@@ -3,7 +3,7 @@ import Image from "next/image";
 
 const HeroSection = () => {
   return (
-    <section className="bg-background-primary">
+    <section id="home" className="bg-background-primary">
       <div className="container mx-auto flex items-center gap-16 px-4 py-14">
         <div className="relative flex-1 space-y-6">
           <h4 className="font-jakarta text-primary-dark text-sm font-bold tracking-[5px] uppercase">
@@ -50,21 +50,25 @@ const HeroSection = () => {
           </div>
         </div>
         <div className="flex flex-1 gap-8">
-          <div className="relative h-[650px] w-[430px]">
+          <div className="w-[250px] flex-shrink-0">
             <Image
               src="/hero-1.jpg"
-              alt="Hero 1"
-              fill
-              className="rounded-tl-[200px] rounded-tr-3xl rounded-b-3xl object-cover"
+              alt="Hero image"
+              width={250}
+              height={650}
+              className="h-full w-full rounded-tl-[200px] rounded-tr-3xl rounded-b-3xl object-cover"
               priority
             />
           </div>
-          <div className="relative h-[650px] w-full">
+
+          {/* Fluid image (fills remaining space) */}
+          <div className="flex-1">
             <Image
               src="/hero-2.jpg"
-              alt="Hero 1"
-              fill
-              className="rounded-tl-[200px] rounded-tr-3xl rounded-b-3xl object-cover"
+              alt="Hero image"
+              width={600}
+              height={650}
+              className="h-full w-full rounded-tl-[200px] rounded-tr-3xl rounded-b-3xl object-cover"
               priority
             />
           </div>
