@@ -73,14 +73,15 @@ const Header = () => {
           </Link>
           <DropdownMenu modal={false}>
             <DropdownMenuTrigger asChild>
-              <Image
-                src="/hero-1.jpg"
-                alt="Avatar"
-                width={200}
-                height={40}
-                className="h-10 w-10 cursor-pointer rounded-full object-cover"
-                priority
-              />
+              <div className="relative size-10 overflow-hidden rounded-full bg-neutral-200">
+                <Image
+                  src="/hero-1.jpg"
+                  alt="Avatar"
+                  fill
+                  className="object-cover"
+                  priority
+                />
+              </div>
             </DropdownMenuTrigger>
             <DropdownMenuContent
               sideOffset={10}
