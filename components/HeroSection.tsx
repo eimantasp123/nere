@@ -51,25 +51,31 @@ const HeroSection = () => {
         </div>
         <div className="flex h-[600px] flex-1 gap-8">
           {/* First image (30%) */}
-          <div className="h-full w-[30%] overflow-hidden">
+          <div className="h-full w-[40%] overflow-hidden">
             <Image
               src="/hero-1.jpg"
               alt="Hero image"
               width={300}
               height={600}
-              className="h-full w-full rounded-tl-[200px] rounded-tr-3xl rounded-b-3xl object-cover"
+              className="h-full w-full rounded-tl-[200px] rounded-tr-3xl rounded-b-3xl"
+              style={{
+                objectFit: "cover",
+              }}
               priority
             />
           </div>
 
           {/* Second image (70%) */}
-          <div className="h-full w-[70%] overflow-hidden">
+          <div className="h-full w-[60%] overflow-hidden">
             <Image
               src="/hero-2.jpg"
               alt="Hero image"
               width={700}
               height={600}
-              className="h-full w-full rounded-tl-[200px] rounded-tr-3xl rounded-b-3xl object-cover"
+              style={{
+                objectFit: "cover",
+              }}
+              className="h-full w-full rounded-tl-[200px] rounded-tr-3xl rounded-b-3xl"
               priority
             />
           </div>

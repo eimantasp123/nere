@@ -73,12 +73,14 @@ const Header = () => {
           </Link>
           <DropdownMenu modal={false}>
             <DropdownMenuTrigger asChild>
-              <div className="relative size-10 overflow-hidden rounded-full bg-neutral-200">
+              <div className="relative size-10 cursor-pointer overflow-hidden rounded-full bg-neutral-200">
                 <Image
                   src="/hero-1.jpg"
                   alt="Avatar"
                   fill
-                  className="object-cover"
+                  style={{
+                    objectFit: "cover",
+                  }}
                   priority
                 />
               </div>
