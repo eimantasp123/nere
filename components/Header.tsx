@@ -17,7 +17,7 @@ const links = [
   { href: "#about-me", label: "Apie mane" },
   { href: "#services", label: "Paslaugos" },
   { href: "#contacts", label: "Kontaktai" },
-  { href: "/", label: "Kliento portalas" },
+  { href: "/dashboard", label: "Kliento portalas" },
 ];
 
 const Header = () => {
@@ -25,11 +25,13 @@ const Header = () => {
   const headerRef = useRef<HTMLDivElement>(null);
   const [open, setOpen] = useState(false);
 
-  const handleScroll = (id: string) => {
-    if (id === "#home") {
+  const handleScroll = (href: string) => {
+    if (href === "#home") {
       router.push("/");
+    } else if (href === "/dashboard") {
+      router.push("/dashboard");
     } else {
-      router.push(`/${id}`);
+      router.push(`/${href}`);
     }
   };
 
@@ -123,11 +125,11 @@ const Header = () => {
               className="bg-background w-40 space-y-1 rounded-2xl border border-neutral-200 p-2 shadow-lg"
             >
               <DropdownMenuItem
-                onClick={() => {}}
+                onClick={() => router.push("/dashboard")}
                 className="hover:bg-primary focus:bg-secondary cursor-pointer rounded-2xl px-4 transition-colors focus:outline-none"
               >
                 <UserCog />
-                Nustatymai
+                Mano paskyra
               </DropdownMenuItem>
               <DropdownMenuItem
                 className="hover:bg-primary focus:bg-secondary cursor-pointer rounded-2xl px-4 transition-colors focus:outline-none"

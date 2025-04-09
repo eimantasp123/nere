@@ -2,9 +2,14 @@
 
 import { lt } from "date-fns/locale";
 import { useState } from "react";
+import { FaFacebook, FaGoogle } from "react-icons/fa";
 import { Calendar } from "./ui/calendar";
+import { Checkbox } from "./ui/checkbox";
 import { Input } from "./ui/input";
 import { Textarea } from "./ui/textarea";
+import { Eye, EyeOff } from "lucide-react";
+import Link from "next/link";
+import { ScrollArea } from "./ui/scroll-area";
 
 const services = [
   {
@@ -33,17 +38,29 @@ const services = [
   },
 ];
 
+const timeSlots = [
+  "09:00h - 10:00h",
+  "10:00h - 11:00h",
+  "11:00h - 12:00h",
+  "12:00h - 13:00h",
+  "13:00h - 14:00h",
+  "14:00h - 15:00h",
+  "15:00h - 16:00h",
+  "16:00h - 17:00h",
+];
+
 const ServicesAndCalendar = () => {
   const [date, setDate] = useState<Date | undefined>(undefined);
   const [selectedService, setSelectedService] = useState<number | null>(null);
   const [step, setStep] = useState(0);
+  const [showPassword, setShowPassword] = useState(false);
 
   const nextStep = () => setStep((s) => Math.min(s + 1, 2));
   const prevStep = () => setStep((s) => Math.max(s - 1, 0));
 
   return (
     <section className="bg-background font-jakarta">
-      <div className="container mx-auto h-screen px-4 py-18">
+      <div className="container mx-auto min-h-screen px-4 pt-20 pb-24">
         {/* Step Indicator */}
         <div className="mb-6 flex items-center justify-between">
           {["Paslauga", "Jūsų informacija", "Patvirtinimas"].map(
@@ -52,7 +69,7 @@ const ServicesAndCalendar = () => {
                 <div
                   className={`mx-auto mb-2 flex h-10 w-10 items-center justify-center rounded-full text-sm font-bold ${
                     index === step
-                      ? "bg-primary text-white"
+                      ? "bg-secondary text-white"
                       : "bg-muted text-muted-foreground"
                   }, `}
                 >
@@ -74,7 +91,7 @@ const ServicesAndCalendar = () => {
                   <div
                     key={service.id}
                     onClick={() => setSelectedService(service.id)}
-                    className={`cursor-pointer rounded-xl p-4 transition-all duration-300 ease-in-out hover:-translate-y-[2px] ${selectedService === service.id ? "bg-primary/70" : "bg-background"} hover:shadow-md`}
+                    className={`cursor-pointer rounded-xl p-4 transition-all duration-300 ease-in-out hover:-translate-y-[2px] ${selectedService === service.id ? "bg-secondary/70" : "bg-background"} hover:shadow-md`}
                   >
                     <div className="flex items-center justify-between">
                       <h5 className="font-marcellus text-md">{service.name}</h5>
@@ -98,11 +115,32 @@ const ServicesAndCalendar = () => {
             <div className="bg-background-primary flex flex-1 flex-col space-y-4 rounded-2xl p-8 shadow-md">
               <h4 className="font-marcellus text-xl">Pasirinkite laiką</h4>
 
-              <div className="text-text bg-background flex flex-1 items-center justify-center rounded-2xl p-4 shadow-md">
-                <p className="text-text max-w-[280px] text-center text-sm">
-                  Norėdami pamatyti laisvus laikus, pirmiausia pasirinkite
-                  paslaugą bei jums tinkamiausią dieną.
-                </p>
+              <div className="text-text bg-background flex flex-1 items-center justify-center rounded-2xl p-2 shadow-md">
+                {!timeSlots ? (
+                  <p className="text-text max-w-[280px] text-center text-sm">
+                    Norėdami pamatyti laisvus laikus, pirmiausia pasirinkite
+                    paslaugą bei jums tinkamiausią dieną.
+                  </p>
+                ) : (
+                  <ScrollArea className="h-[300px] w-full p-3">
+                    <div className="grid w-full grid-cols-2 gap-2 p-1">
+                      {timeSlots.map((slot, index) => (
+                        <div
+                          key={index}
+                          className="text-text bg-secondary/70 hover:bg-secondary cursor-pointer rounded-full px-4 py-2 text-center text-xs text-nowrap transition-all duration-300 ease-in-out hover:-translate-y-[1px] hover:shadow-sm"
+                        >
+                          {slot}
+                        </div>
+                      ))}
+                      {timeSlots.length === 0 && (
+                        <p className="text-text col-span-2 pt-8 text-center text-sm">
+                          Atsiprašome, tačiau pasirinkta diena yra pilnai
+                          užimta.
+                        </p>
+                      )}
+                    </div>
+                  </ScrollArea>
+                )}
               </div>
             </div>
           </div>
@@ -126,7 +164,7 @@ const ServicesAndCalendar = () => {
                 />
                 <Textarea
                   name="message"
-                  className="min-h-[150px]"
+                  className="min-h-[200px]"
                   placeholder="Papildoma informacija (nebūtina)"
                 ></Textarea>
                 <p className="text-xs text-neutral-500">
@@ -145,18 +183,60 @@ const ServicesAndCalendar = () => {
                     type="email"
                     placeholder="El. Pašto adresas"
                   />
-                  <Input
-                    type="password"
-                    name="password"
-                    placeholder="Slaptažodis"
-                  />
-                  <button className="hover:bg-primary/70 cursor-pointer rounded-full bg-neutral-800 px-12 py-3 text-sm text-white transition-colors duration-300 ease-in-out hover:text-black">
+                  <div className="relative w-full">
+                    <Input
+                      type={showPassword ? "text" : "password"}
+                      name="password"
+                      placeholder="Slaptažodis"
+                    />
+                    <button
+                      type="button"
+                      className="text-muted-foreground absolute top-1/2 right-4 -translate-y-1/2 cursor-pointer"
+                      onClick={() => setShowPassword(!showPassword)}
+                    >
+                      {showPassword ? (
+                        <EyeOff className="h-4 w-4" />
+                      ) : (
+                        <Eye className="h-4 w-4" />
+                      )}
+                    </button>
+                  </div>
+                  <div className="flex items-center justify-between gap-4 px-1">
+                    <label className="flex cursor-pointer items-center gap-2">
+                      <Checkbox id="remember" />
+                      <span className="text-xs text-neutral-600">
+                        Prisiminti mane
+                      </span>
+                    </label>
+
+                    <p className="cursor-pointer text-xs font-medium text-black/80">
+                      Pamiršote slaptažodį?
+                    </p>
+                  </div>
+                  <button className="cursor-pointer rounded-full bg-neutral-800 px-12 py-3 text-sm font-medium text-white transition-colors duration-300 ease-in-out hover:bg-neutral-700">
                     Prisijungti
                   </button>
+                  <div className="text-text my-2 flex items-center justify-center gap-4 text-sm">
+                    <hr className="bg-background h-[2px] w-full" />
+                    <span className="text-text text-xs text-nowrap">
+                      Prisijunkite su
+                    </span>
+                    <hr className="bg-background h-[2px] w-full" />
+                  </div>
+                  <div className="flex gap-4">
+                    <button className="bg-background hover:bg-background/80 flex flex-1 cursor-pointer items-center justify-center gap-2 rounded-full py-3 text-sm font-medium shadow-md transition-all duration-300 ease-in-out hover:shadow-lg">
+                      <FaFacebook size={15} />
+                      <span>Facebbok</span>
+                    </button>
+                    <button className="bg-background hover:bg-background/80 flex flex-1 cursor-pointer items-center justify-center gap-2 rounded-full py-3 text-sm font-medium shadow-md transition-all duration-300 ease-in-out hover:shadow-lg">
+                      <FaGoogle size={15} />
+                      <span>Google</span>
+                    </button>
+                  </div>
                   <p className="text-center text-xs text-neutral-500">
-                    Pamiršote slaptažodį?{" "}
+                    Neturite paskyros?{" "}
                     <span className="cursor-pointer font-medium text-black/80">
-                      Atkurti slaptažodį
+                      Registruotis
                     </span>
                   </p>
                 </div>
@@ -166,20 +246,35 @@ const ServicesAndCalendar = () => {
         )}
 
         {step === 2 && (
-          <div className="bg-background-primary space-y-4 rounded-2xl p-6 shadow">
-            <h4 className="font-marcellus text-xl">Peržiūra</h4>
+          <div className="bg-background-primary space-y-4 rounded-2xl p-8 text-sm shadow-md">
+            <h4 className="font-marcellus text-xl">
+              Rezervacijos informacijos patikrinimas
+            </h4>
             <p>
               <strong>Paslauga:</strong>{" "}
               {services.find((s) => s.id === selectedService)?.name}
             </p>
             <p>
-              <strong>Data:</strong> {date?.toLocaleDateString("lt-LT")}
+              {/* <strong>Data:</strong> {date?.toLocaleDateString("lt-LT")} */}
+              <strong>Rezervacijos data:</strong> 2023-10-10
             </p>
             <p>
-              <strong>Vardas:</strong>
+              {/* <strong>Data:</strong> {date?.toLocaleDateString("lt-LT")} */}
+              <strong>Rezervacijos laikas:</strong> 10:00h (iki 11:00h)
             </p>
             <p>
-              <strong>El. paštas:</strong>
+              <strong>Vardas:</strong> Eimantas
+            </p>
+            <p>
+              <strong>El. paštas:</strong> example@gmail.com
+            </p>
+            <p>
+              <strong>Telefono numeris:</strong> +370 612 34567
+            </p>
+            <p>
+              <strong>Papildoma informacija:</strong> Lorem ipsum dolor sit
+              amet, consectetur adipiscing elit. Sed do eiusmod tempor
+              incididunt ut labore et
             </p>
           </div>
         )}
@@ -205,9 +300,12 @@ const ServicesAndCalendar = () => {
               Tęsti
             </button>
           ) : (
-            <button className="bg-secondary-dark hover:bg-secondary/70 cursor-pointer rounded-full px-12 py-3 text-sm transition-colors duration-300 ease-in-out">
+            <Link
+              href="/booking/success"
+              className="bg-secondary hover:bg-secondary/70 cursor-pointer rounded-full px-12 py-3 text-sm transition-colors duration-300 ease-in-out"
+            >
               Patvirtinti
-            </button>
+            </Link>
           )}
         </div>
       </div>
