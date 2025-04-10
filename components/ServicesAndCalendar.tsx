@@ -39,14 +39,13 @@ const services = [
 ];
 
 const timeSlots = [
-  "09:00h - 10:00h",
-  "10:00h - 11:00h",
-  "11:00h - 12:00h",
-  "12:00h - 13:00h",
-  "13:00h - 14:00h",
-  "14:00h - 15:00h",
-  "15:00h - 16:00h",
-  "16:00h - 17:00h",
+  "10:00h (iki 11:00h)",
+  "11:00h (iki 12:00h)",
+  "12:00h (iki 13:00h)",
+  "13:00h (iki 14:00h)",
+  "14:00h (iki 15:00h)",
+  "15:00h (iki 16:00h)",
+  "16:00h (iki 17:00h)",
 ];
 
 const ServicesAndCalendar = () => {
@@ -60,14 +59,14 @@ const ServicesAndCalendar = () => {
 
   return (
     <section className="bg-background font-jakarta">
-      <div className="container mx-auto min-h-screen px-4 pt-20 pb-24">
+      <div className="container mx-auto min-h-screen px-4 py-14 lg:pt-20 lg:pb-24">
         {/* Step Indicator */}
         <div className="mb-6 flex items-center justify-between">
           {["Paslauga", "Jūsų informacija", "Patvirtinimas"].map(
             (label, index) => (
               <div key={index} className="flex-1 text-center">
                 <div
-                  className={`mx-auto mb-2 flex h-10 w-10 items-center justify-center rounded-full text-sm font-bold ${
+                  className={`mx-auto mb-2 flex h-8 w-8 items-center justify-center rounded-full text-sm font-bold lg:h-10 lg:w-10 ${
                     index === step
                       ? "bg-secondary text-white"
                       : "bg-muted text-muted-foreground"
@@ -75,7 +74,7 @@ const ServicesAndCalendar = () => {
                 >
                   {index + 1}
                 </div>
-                <div className="text-sm">{label}</div>
+                <div className="text-xs md:text-sm">{label}</div>
               </div>
             ),
           )}
@@ -83,46 +82,51 @@ const ServicesAndCalendar = () => {
 
         {/* Step Content */}
         {step === 0 && (
-          <div className="flex items-stretch gap-4">
-            <div className="bg-background-primary w-[34%] space-y-4 rounded-2xl p-8 shadow-md">
-              <h4 className="font-marcellus text-xl">Pasirinkite paslauga</h4>
+          <div className="grid-auto grid gap-4 md:grid-cols-2 md:grid-rows-2 lg:grid-rows-1 xl:grid-cols-3">
+            {/* Select services container */}
+            <div className="bg-background-primary space-y-4 rounded-2xl p-5 shadow-md md:col-span-2 lg:p-8 xl:col-auto">
+              <h5 className="text-xl xl:text-2xl">Pasirinkite paslauga</h5>
               <div className="flex flex-col gap-3">
                 {services.map((service) => (
                   <div
                     key={service.id}
                     onClick={() => setSelectedService(service.id)}
-                    className={`cursor-pointer rounded-xl p-4 transition-all duration-300 ease-in-out hover:-translate-y-[2px] ${selectedService === service.id ? "bg-secondary/70" : "bg-background"} hover:shadow-md`}
+                    className={`cursor-pointer rounded-xl p-3 transition-all duration-300 ease-in-out hover:-translate-y-[2px] lg:p-4 ${selectedService === service.id ? "bg-secondary/70" : "bg-background"} hover:shadow-md`}
                   >
                     <div className="flex items-center justify-between">
-                      <h5 className="font-marcellus text-md">{service.name}</h5>
-                      <p className="text-text text-xs">{service.price}€</p>
+                      <h6 className="text-base">{service.name}</h6>
+                      <p className="text-xs">{service.price}€</p>
                     </div>
                     <p className="text-text text-sm">{service.description}</p>
                   </div>
                 ))}
               </div>
             </div>
-            <div>
+
+            {/* Select date calendar */}
+            <div className="bg-background-primary flex justify-center rounded-2xl">
               <Calendar
                 mode="single"
                 selected={date}
                 onSelect={setDate}
                 locale={lt}
                 disabled={{ before: new Date() }}
-                className="bg-background-primary h-full rounded-2xl p-8 shadow-md"
+                className="bg-background-primary h-full rounded-2xl p-5 shadow-md lg:p-8"
               />
             </div>
-            <div className="bg-background-primary flex flex-1 flex-col space-y-4 rounded-2xl p-8 shadow-md">
-              <h4 className="font-marcellus text-xl">Pasirinkite laiką</h4>
 
-              <div className="text-text bg-background flex flex-1 items-center justify-center rounded-2xl p-2 shadow-md">
+            {/* Select time calendar */}
+            <div className="bg-background-primary flex flex-1 flex-col space-y-4 rounded-2xl p-5 shadow-md lg:p-8">
+              <h5 className="text-xl xl:text-2xl">Pasirinkite laiką</h5>
+
+              <div className="text-text bg-background flex flex-1 justify-center rounded-2xl shadow-md">
                 {!timeSlots ? (
-                  <p className="text-text max-w-[280px] text-center text-sm">
+                  <p className="text-text max-w-[280px] pt-40 text-center text-sm">
                     Norėdami pamatyti laisvus laikus, pirmiausia pasirinkite
                     paslaugą bei jums tinkamiausią dieną.
                   </p>
                 ) : (
-                  <ScrollArea className="h-[300px] w-full p-3">
+                  <ScrollArea className="max-h-[380px] w-full p-4">
                     <div className="grid w-full grid-cols-2 gap-2 p-1">
                       {timeSlots.map((slot, index) => (
                         <div
@@ -133,7 +137,7 @@ const ServicesAndCalendar = () => {
                         </div>
                       ))}
                       {timeSlots.length === 0 && (
-                        <p className="text-text col-span-2 pt-8 text-center text-sm">
+                        <p className="text-text col-span-2 py-20 text-center text-sm">
                           Atsiprašome, tačiau pasirinkta diena yra pilnai
                           užimta.
                         </p>
@@ -147,9 +151,9 @@ const ServicesAndCalendar = () => {
         )}
 
         {step === 1 && (
-          <div className="bg-background-primary space-y-4 rounded-2xl p-8 shadow-md">
-            <h4 className="font-marcellus text-xl">Jūsų informacija</h4>
-            <div className="flex w-full gap-14">
+          <div className="bg-background-primary space-y-4 rounded-2xl p-5 shadow-md lg:p-8">
+            <h5 className="text-xl xl:text-2xl">Jūsų informacija</h5>
+            <div className="flex w-full flex-col gap-8 md:gap-14 lg:flex-row">
               <div className="flex flex-1 flex-col gap-4">
                 <Input name="firstName" type="text" placeholder="Vardas" />
                 <Input
@@ -167,13 +171,13 @@ const ServicesAndCalendar = () => {
                   className="min-h-[200px]"
                   placeholder="Papildoma informacija (nebūtina)"
                 ></Textarea>
-                <p className="text-xs text-neutral-500">
+                <p className="text-center text-xs leading-normal text-neutral-500">
                   Jūsų informacija bus naudojama tik rezervacijos patvirtinimui
                   ir nebus dalinama trečiosioms šalims.
                 </p>
               </div>
-              <div className="w-[40%]">
-                <p className="text-text text-center text-sm">
+              <div className="lg:w-[40%]">
+                <p className="text-text text-center text-sm leading-normal">
                   Taip pat galite prisijungti prie klientu sistemoje, jeigu
                   norite matyti savo rezervacijas ir lengviau valdyti paskyra
                 </p>
@@ -246,10 +250,10 @@ const ServicesAndCalendar = () => {
         )}
 
         {step === 2 && (
-          <div className="bg-background-primary space-y-4 rounded-2xl p-8 text-sm shadow-md">
-            <h4 className="font-marcellus text-xl">
+          <div className="bg-background-primary space-y-2 rounded-2xl p-8 text-sm shadow-md">
+            <h5 className="pb-2 text-xl xl:text-2xl">
               Rezervacijos informacijos patikrinimas
-            </h4>
+            </h5>
             <p>
               <strong>Paslauga:</strong>{" "}
               {services.find((s) => s.id === selectedService)?.name}
@@ -270,6 +274,9 @@ const ServicesAndCalendar = () => {
             </p>
             <p>
               <strong>Telefono numeris:</strong> +370 612 34567
+            </p>
+            <p>
+              <strong>Mokėjimas:</strong> Paslaugos atlikimo vietoje
             </p>
             <p>
               <strong>Papildoma informacija:</strong> Lorem ipsum dolor sit

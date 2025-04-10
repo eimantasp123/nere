@@ -1,37 +1,35 @@
-import { CalendarDays, UserPen, UserX } from "lucide-react";
-import React from "react";
+import { Input } from "@/components/ui/input";
 
 const page = () => {
   return (
-    <>
-      <section className="bg-neutral-800">
-        <div className="font-marcellus container mx-auto px-4 py-16 text-center text-4xl text-white">
-          Kliento profilis
-        </div>
-      </section>
-      <section className="bg-background font-jakarta h-screen">
-        <div className="container mx-auto space-y-3 px-4 pt-8 pb-20">
-          <h6 className="font-marcellus text-lg">Meniu</h6>
-          <div className="flex gap-10">
-            <div className="flex flex-col gap-2">
-              <button className="bg-secondary/50 item hover:bg-secondary/80 flex cursor-pointer gap-2 rounded-full px-12 py-3 text-sm transition-all duration-300 ease-in-out hover:-translate-y-[1px] hover:shadow-md">
-                <UserPen strokeWidth={1.5} size={20} />
-                <span>Asmeninė informacija</span>
-              </button>
-              <button className="bg-secondary/50 item hover:bg-secondary/80 flex cursor-pointer gap-2 rounded-full px-12 py-3 text-sm transition-all duration-300 ease-in-out hover:-translate-y-[1px] hover:shadow-md">
-                <CalendarDays strokeWidth={1.5} size={20} />
-                <span>Rezervacijos</span>
-              </button>
-              <button className="bg-secondary/50 item hover:bg-secondary/80 flex cursor-pointer gap-2 rounded-full px-12 py-3 text-sm transition-all duration-300 ease-in-out hover:-translate-y-[1px] hover:shadow-md">
-                <UserX strokeWidth={1.5} size={20} />
-                <span>Istrinti paskyra</span>
-              </button>
+    <div className="flex-1 gap-10">
+      <div className="bg-background-primary flex-1 rounded-[20px] p-6">
+        <h6 className="font-marcellus text-lg">Asmeninė informacija</h6>
+        <div className="text-text mt-4 flex flex-col gap-2 text-sm">
+          <div className="grid gap-3 md:grid-cols-2 md:gap-6">
+            <div className="space-y-2">
+              <p className="text-text text-sm">Vardas</p>
+              <Input name="firstName" placeholder="Jūsų vardas" type="text" />
             </div>
-            <div className="flex-1">content</div>
+            <div className="space-y-2">
+              <p className="text-text text-sm">Pavardė</p>
+              <Input name="firstName" placeholder="Jūsų pavardė" type="text" />
+            </div>
+            <div className="space-y-2">
+              <p className="text-text text-sm">El. pašto adresas</p>
+              <Input name="email" placeholder="El. paštas" type="email" />
+            </div>
+            <div className="space-y-2">
+              <p className="text-text text-sm">Telefono numeris</p>
+              <Input name="phone" placeholder="Telefono numeris" type="phone" />
+            </div>
           </div>
+          <button className="bg-secondary hover:bg-secondary/80 mt-4 w-full cursor-pointer rounded-full px-6 py-3 text-sm shadow-md transition-colors duration-200 ease-in-out">
+            Išsaugoti informacija
+          </button>
         </div>
-      </section>
-    </>
+      </div>
+    </div>
   );
 };
 

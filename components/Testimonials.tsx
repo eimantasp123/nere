@@ -1,34 +1,55 @@
 import Image from "next/image";
 
+const testimonials = [
+  {
+    name: "Linda Watson",
+    age: 26,
+    rating: 4.5,
+    title: "Yoga Enthusiast",
+    review:
+      "I've found my sanctuary at this yoga studio. The instructors are knowledgeable and the atmosphere is calming.",
+  },
+  {
+    name: "John Doe",
+    age: 30,
+    rating: 5,
+    title: "Yoga Beginner",
+    review:
+      "This place has changed my life! I feel more relaxed and centered than ever before.",
+  },
+  {
+    name: "Jane Smith",
+    age: 28,
+    rating: 4,
+    title: "Yoga Practitioner",
+    review:
+      "A wonderful experience! The classes are well-structured and the community is welcoming.",
+  },
+];
+
+/**
+ * * Testimonials component displays a section with testimonials from clients.
+ */
 const Testimonials = () => {
   return (
     <section className="bg-background">
-      <div className="container mx-auto space-y-6 px-4 py-20 text-center">
-        <h4 className="font-jakarta text-primary-dark text-sm font-bold tracking-[5px] uppercase">
-          Testimonials
-        </h4>
-        <h1 className="font-marcellus text-5xl leading-tight">
-          Sweet Reviews From Our Students
-        </h1>
-        <p className="text-text mx-auto max-w-[800px] leading-[28px]">
+      <div className="container mx-auto space-y-6 px-4 py-10 text-center lg:py-20">
+        <h4>Testimonials</h4>
+        <h2>Sweet Reviews From Our Students</h2>
+        <p className="mx-auto max-w-[800px]">
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
           tellus, luctus nec ullamcorper mattis, dapibus leo.
         </p>
 
-        <div className="flex gap-8 pt-10 text-start">
-          {Array.from({ length: 3 }, (_, index) => (
+        <div className="scrollbar-none flex gap-8 overflow-x-auto pt-10 text-start">
+          {testimonials.map((testimonial, index) => (
             <div
               key={index}
-              className="bg-background-primary space-y-6 rounded-3xl p-9"
+              className="bg-background-primary min-w-[300px] flex-1 space-y-6 rounded-3xl p-9"
             >
-              <StarRating rating={4.5} />
-              <h1 className="font-marcellus text-2xl leading-tight">
-                Ive found my sanctuary at this yoga studio
-              </h1>
-              <p className="text-text leading-[28px]">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-                tellus, luctus nec ullamcorper mattis, dapibus leo.
-              </p>
+              <StarRating rating={testimonial.rating} />
+              <h5>{testimonial.title}</h5>
+              <p>{testimonial.review}</p>
               <hr className="h-[2px] w-full border-neutral-300" />
               <div className="flex items-center gap-4">
                 <div className="relative size-11">
@@ -40,8 +61,8 @@ const Testimonials = () => {
                     priority
                   />
                 </div>
-                <h6 className="font-marcellus text-sm">
-                  Linda Watson, 26 years
+                <h6>
+                  {testimonial.name}, {testimonial.age} metai
                 </h6>
               </div>
             </div>

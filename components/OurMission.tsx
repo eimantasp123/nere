@@ -1,5 +1,8 @@
 import Image from "next/image";
 
+/**
+ * * OurMission component displays a section with a background image and a logo.
+ */
 const OurMission = () => {
   return (
     <section className="from-background-primary to-background mb-4 bg-gradient-to-b from-50% to-50%">
@@ -9,9 +12,9 @@ const OurMission = () => {
             backgroundImage:
               "linear-gradient(#86a994c7, #70a8a5c9), url('/hero-1.jpg')",
           }}
-          className="relative flex h-[400px] items-center rounded-t-3xl rounded-br-[200px] rounded-bl-3xl bg-cover bg-bottom p-8 shadow-xl"
+          className="relative flex flex-col gap-5 rounded-t-3xl rounded-br-[200px] rounded-bl-3xl bg-cover bg-bottom p-6 pb-20 shadow-xl lg:flex-row lg:items-center lg:gap-10 lg:px-8 lg:py-10 xl:px-14 xl:py-18"
         >
-          <div className="w-[350px]">
+          <div className="w-[75px] lg:w-[100px] xl:w-[150px]">
             <Image
               src="/logo-white.png"
               alt="Nere logotipas"
@@ -20,10 +23,8 @@ const OurMission = () => {
             />
           </div>
           <div className="flex-1 space-y-5 text-white">
-            <h4 className="font-jakarta text-sm font-bold tracking-[5px] uppercase">
-              Our Mission
-            </h4>
-            <h2 className="font-marcellus text-5xl leading-tight">
+            <h4 className="text-white/70">Our Mission</h4>
+            <h2>
               Unwind and Recharge with Yoga. Lorem ipsum dolor sit amet, consec
               tetur adipiscing.
             </h2>

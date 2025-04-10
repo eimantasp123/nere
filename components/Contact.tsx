@@ -1,20 +1,25 @@
 import { Mail, MapPinned, Phone } from "lucide-react";
 import Image from "next/image";
+import { Input } from "./ui/input";
+import { Textarea } from "./ui/textarea";
 
+/**
+ * * Contact component with a form and contact information.
+ */
 const Contact = () => {
   return (
     <section
       id="contacts"
-      className="bg-background relative container mx-auto flex items-center gap-24 px-4 py-20"
+      className="bg-background relative container mx-auto grid items-center gap-14 px-4 pt-14 pb-8 md:gap-24 lg:grid-cols-2 lg:py-20"
     >
-      <div className="relative h-[720px] flex-1">
+      <div className="relative order-1 h-[400px] flex-1 lg:order-none lg:h-[720px]">
         <Image
           src="/hero-1.jpg"
           alt="Hero 1"
           fill
           className="rounded-tl-3xl rounded-tr-[200px] rounded-b-3xl object-cover"
         />
-        <div className="bg-background absolute bottom-7 left-7 space-y-6 rounded-[20px] py-8 pr-26 pl-8">
+        <div className="bg-background absolute bottom-3 left-3 space-y-6 rounded-[20px] p-5 pr-12 md:bottom-7 md:left-7 md:py-8 md:pl-8 lg:pr-26">
           <span className="text-text font-marcellus flex items-center gap-2 text-sm">
             <MapPinned strokeWidth={1.5} className="text-primary-dark" />
             <p>463 7th Ave, NY 10018, USA</p>
@@ -38,42 +43,38 @@ const Contact = () => {
         </div>
       </div>
       <div className="flex-1 space-y-6">
-        <h4 className="font-jakarta text-primary-dark text-sm font-bold tracking-[5px] uppercase">
-          Our Contact
-        </h4>
-        <h1 className="font-marcellus text-5xl leading-tight">
-          Get in Touch with Us
-        </h1>
-        <p className="text-text leading-[28px]">
+        <h4>Our Contact</h4>
+        <h2>Get in Touch with Us</h2>
+        <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
           tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
         </p>
-        <form className="space-y-5 pt-2">
-          <input
+        <form className="space-y-3 pt-2 md:space-y-4">
+          <Input
             type="text"
             placeholder="Jūsų vardas"
             name="name"
-            className="text-text placeholder:text-text w-full rounded-[20px] bg-[#F3F7EC] px-6 py-[18px] text-sm focus:outline-none"
+            className="rounded-full bg-[#F3F7EC] py-[18px]"
           />
-          <div className="flex gap-5">
-            <input
+          <div className="flex flex-col gap-3 md:flex-row md:gap-4">
+            <Input
               type="phone"
               name="phone"
               placeholder="Telefono numeris"
-              className="text-text placeholder:text-text w-full rounded-[20px] bg-[#F3F7EC] px-6 py-[18px] text-sm focus:outline-none"
+              className="rounded-full bg-[#F3F7EC] py-[18px]"
             />
-            <input
+            <Input
               type="email"
               placeholder="Jūsų el. paštas"
               name="email"
-              className="text-text placeholder:text-text w-full rounded-[20px] bg-[#F3F7EC] px-6 py-[18px] text-sm focus:outline-none"
+              className="rounded-full bg-[#F3F7EC] py-[18px]"
             />
           </div>
-          <textarea
+          <Textarea
             name="message"
             placeholder="Žinutė"
-            className="text-text placeholder:text-text h-[200px] w-full resize-none rounded-[20px] bg-[#F3F7EC] px-6 py-[18px] text-sm focus:outline-none"
-          ></textarea>
+            className="min-h-[150px] rounded-[20px] bg-[#F3F7EC] py-[18px]"
+          ></Textarea>
           <button className="bg-secondary w-full cursor-pointer rounded-full py-4 text-sm text-black shadow-sm transition-colors duration-200 ease-in-out hover:bg-neutral-800 hover:text-white">
             Siųsti žinutę
           </button>

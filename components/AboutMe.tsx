@@ -1,11 +1,15 @@
 import { Facebook, Instagram } from "lucide-react";
 import Image from "next/image";
 
+/**
+ * * AboutMe component displays a section with an image and information about the author.
+ * * It includes a title, subtitle, description, and social media icons.
+ */
 const AboutMe = () => {
   return (
     <section id="about-me" className="bg-background">
-      <div className="container mx-auto flex items-center gap-24 px-4 py-20">
-        <div className="relative h-[720px] flex-1">
+      <div className="container mx-auto grid items-center gap-10 px-4 py-20 lg:grid-cols-2 lg:gap-24">
+        <div className="relative order-1 h-[350px] w-full flex-1 sm:h-[450px] lg:order-none lg:h-[720px]">
           <Image
             src="/hero-1.jpg"
             alt="Hero 1"
@@ -15,12 +19,8 @@ const AboutMe = () => {
           />
         </div>
         <div className="flex-1 space-y-6">
-          <h4 className="font-jakarta text-primary-dark text-sm font-bold tracking-[5px] uppercase">
-            Apie mane
-          </h4>
-          <h1 className="font-marcellus mb-10 text-5xl leading-tight">
-            Yoga Is the Journey of the Self, to the Self
-          </h1>
+          <h4>Apie mane</h4>
+          <h2>Yoga Is the Journey of the Self, to the Self</h2>
           <hr className="h-[2px] w-24" />
           <p className="text-text leading-[28px]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
@@ -33,7 +33,7 @@ const AboutMe = () => {
             tellus, luctus nec ullamcorper.
           </p>
           <div className="flex justify-between gap-4 pt-4">
-            <div className="space-y-1">
+            <div>
               <h4 className="font-marcellus text-sm font-bold tracking-widest uppercase">
                 Neringa Petrikaitė
               </h4>

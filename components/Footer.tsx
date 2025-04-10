@@ -23,9 +23,9 @@ const Footer = () => {
 
   return (
     <section className="font-jakarta bg-neutral-900">
-      <div className="container mx-auto flex items-center justify-between p-4">
+      <div className="container mx-auto flex flex-col items-center justify-between gap-4 p-8 lg:flex-row">
         <nav className="flex flex-1">
-          <div className="font-marcellus flex gap-10 text-sm text-nowrap">
+          <div className="font-marcellus flex flex-wrap justify-center gap-8 text-sm text-nowrap md:gap-10">
             {links.map((link) => (
               <button
                 key={link.href}
@@ -37,7 +37,7 @@ const Footer = () => {
             ))}
           </div>
         </nav>
-        <div className="w-[150px]">
+        <div className="w-[70px] 2xl:w-[80px]">
           <Image
             src="/logo-white.png"
             alt="Nere logotipas"

@@ -1,8 +1,15 @@
 import Footer from "@/components/Footer";
 import Header from "@/components/Header";
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Marcellus, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
+};
 
 const marcellus = Marcellus({
   variable: "--font-marcellus",
@@ -29,7 +36,7 @@ export default function RootLayout({
   return (
     <html lang="lt">
       <body
-        className={`${marcellus.variable} ${plusJakartaSans.variable} pt-20 antialiased`}
+        className={`${marcellus.variable} ${plusJakartaSans.variable} pt-18 antialiased`}
       >
         <Header />
         {children}

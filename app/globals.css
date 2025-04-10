@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@plugin 'tailwind-scrollbar';
 
 :root {
   --background: #fffef6;
@@ -102,10 +103,34 @@ html {
 }
 
 @layer base {
+  h1 {
+    @apply font-marcellus text-4xl leading-tight md:text-5xl;
+  }
+  h2 {
+    @apply font-marcellus text-3xl leading-tight lg:text-4xl xl:text-5xl;
+  }
+  h3 {
+    @apply font-marcellus text-2xl leading-tight lg:text-3xl;
+  }
+  h4 {
+    @apply font-jakarta text-primary-dark text-xs font-bold tracking-[5px] uppercase md:text-sm;
+  }
+  h5 {
+    @apply font-marcellus text-2xl leading-tight;
+  }
+  h6 {
+    @apply font-marcellus text-sm leading-tight;
+  }
+  p {
+    @apply text-text leading-[28px];
+  }
   * {
     @apply border-border outline-ring/50;
   }
   body {
     @apply bg-background text-foreground;
+  }
+  button {
+    @apply cursor-pointer;
   }
 }

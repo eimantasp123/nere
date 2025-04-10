@@ -1,19 +1,44 @@
 import Image from "next/image";
 import React from "react";
+const blogs = [
+  {
+    id: 1,
+    title: "Yoga can promote better self-care",
+    date: "February 10, 2024",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    id: 2,
+    title: "Yoga can promote better self-care",
+    date: "February 14, 2024",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+  {
+    id: 3,
+    title: "Yoga can promote better self-care",
+    date: "February 15, 2024",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.",
+  },
+];
 
+/**
+ * * BlogsSection component to display a section of blog articles.
+ */
 const BlogsSection = () => {
   return (
-    <section id="services" className="bg-background-primary mt-10 py-20">
+    <section
+      id="services"
+      className="bg-background-primary mt-10 py-12 lg:py-20"
+    >
       <div className="container mx-auto">
         <div className="px-4 py-6">
-          <div className="mb-8 flex items-center justify-between gap-8">
+          <div className="mb-8 flex flex-col items-start gap-8 sm:flex-row sm:items-center sm:justify-between">
             <div className="space-y-4">
-              <h4 className="font-jakarta text-primary-dark text-sm font-bold tracking-[5px] uppercase">
-                Blog & News
-              </h4>
-              <h1 className="font-marcellus text-5xl leading-tight">
-                Our Articles About Yoga
-              </h1>
+              <h4>Blog & News</h4>
+              <h2>Our Articles About Yoga</h2>
             </div>
             <a
               href="#contacts"
@@ -22,13 +47,13 @@ const BlogsSection = () => {
               Visos naujienos
             </a>
           </div>
-          <div className="flex justify-between gap-8 pt-8">
-            {Array.from({ length: 3 }, (_, index) => (
+          <div className="scrollbar-none flex justify-between gap-8 overflow-x-auto pt-8">
+            {blogs.map((blog, index) => (
               <div
                 key={index}
-                className="group bg-background overflow-hidden rounded-tl-3xl rounded-tr-[170px] rounded-b-3xl text-start shadow-md transition-shadow duration-300 ease-in-out hover:shadow-lg"
+                className="group bg-background min-w-[320px] overflow-hidden rounded-tl-3xl rounded-tr-[170px] rounded-b-3xl text-start shadow-md transition-shadow duration-300 ease-in-out hover:shadow-lg"
               >
-                <div className="relative h-[300px] w-full cursor-pointer overflow-hidden">
+                <div className="relative h-[200px] w-full cursor-pointer overflow-hidden md:h-[300px]">
                   {/* Image */}
                   <Image
                     src="/hero-1.jpg"
@@ -43,16 +68,12 @@ const BlogsSection = () => {
                 </div>
 
                 {/* Content */}
-                <div className="space-y-4 p-8">
+                <div className="space-y-4 p-6 md:p-8">
+                  <h6 className="font-marcellus text-primary-dark text-sm">
+                    {blog.date}
+                  </h6>
+                  <h5 className="cursor-pointer">{blog.title}</h5>
                   <p>
-                    <span className="font-marcellus text-primary-dark text-sm">
-                      February 10, 2024
-                    </span>
-                  </p>
-                  <h2 className="font-marcellus mt-4 mb-2 cursor-pointer text-xl">
-                    Yoga can promote better self-care {index + 1}
-                  </h2>
-                  <p className="text-text cursor-pointer leading-[28px]">
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
                     do eiusmod tempor incididunt ut labore et dolore magna
                     aliqua.
