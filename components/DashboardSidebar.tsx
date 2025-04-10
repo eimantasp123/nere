@@ -11,8 +11,7 @@ const links = [
     icon: <UserPenIcon size={20} />,
   },
   {
-    href: "/dashboard/bookings/active",
-    generalHref: "/dashboard/bookings",
+    href: "/dashboard/bookings",
     label: "Rezervacijos",
     icon: <CalendarDays size={20} />,
   },
@@ -70,26 +69,20 @@ const DashboardSidebar = ({ closeAction }: { closeAction?: () => void }) => {
       <hr className="my-4 h-[0.5px] w-full border-none bg-neutral-200" />
       <h6 className="font-marcellus mb-2 text-sm">Meniu</h6>
       <div className="flex flex-col gap-2">
-        {links.map(({ href, generalHref, label, icon }) => {
-          const isActive = generalHref
-            ? pathname.startsWith(generalHref) // for nested routes
-            : pathname === href; // for single-level routes
-
-          return (
-            <button
-              key={href}
-              onClick={() => handleRouteChange(href)}
-              className={`${
-                isActive
-                  ? "bg-secondary text-black"
-                  : "bg-background-primary text-text"
-              } item hover:bg-secondary/80 flex w-full items-center gap-2 rounded-full px-6 py-3 text-sm transition-all duration-300 ease-in-out hover:-translate-y-[1px] hover:shadow-md`}
-            >
-              {icon}
-              <span>{label}</span>
-            </button>
-          );
-        })}
+        {links.map(({ href, label, icon }) => (
+          <button
+            key={href}
+            onClick={() => handleRouteChange(href)}
+            className={`${
+              pathname === href
+                ? "bg-secondary text-black"
+                : "bg-background-primary text-text"
+            } item hover:bg-secondary/80 flex w-full items-center gap-2 rounded-full px-6 py-3 text-sm transition-all duration-300 ease-in-out hover:-translate-y-[1px] hover:shadow-md`}
+          >
+            {icon}
+            <span>{label}</span>
+          </button>
+        ))}
       </div>
     </>
   );
