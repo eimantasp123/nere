@@ -20,24 +20,23 @@ const AboutMe = () => {
         </div>
         <div className="flex-1 space-y-6">
           <h6>Apie mane</h6>
-          <h2>Yoga Is the Journey of the Self, to the Self</h2>
+          <h2>Ritualai ramybei, kuriuos kuriu iš širdies</h2>
           <hr className="h-[2px] w-24 border-neutral-400" />
           <p className="text-text leading-[28px]">
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-            tellus, luctus nec ullamcorper. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-            tellus, luctus nec ullamcorper. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper.
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-            tellus, luctus nec ullamcorper.
+            Esu Neringa – Nere Head Spa įkūrėja ir sąmoningo prisilietimo
+            praktikė. Po ilgos kelionės per grožio industriją ir asmeninį
+            tobulėjimą, atradau japoniško galvos masažo meno galią. Kiekvienas
+            seansas – tai ne tik galvos masažas, bet ir kvietimas sustoti,
+            atsipalaiduoti ir sugrįžti į save. Tikiu, kad švelnus prisilietimas,
+            rūpestis ir dėmesys – tai kelias į gilų atsipalaidavimą bei vidinę
+            ramybę.
           </p>
           <div className="flex justify-between gap-4 pt-4">
             <div>
               <h4 className="font-marcellus text-sm font-bold tracking-widest uppercase">
                 Neringa Petrikaitė
               </h4>
-              <p className="text-text text-sm">Lorem ipsum dolor sit amet</p>
+              <p className="text-text text-sm">NERE Head Spa įkūrėja</p>
             </div>
             <div className="flex items-center gap-2">
               <a
