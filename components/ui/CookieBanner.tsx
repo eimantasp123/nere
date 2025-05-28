@@ -7,7 +7,7 @@ import "cookieconsent/build/cookieconsent.min.css";
 declare global {
   interface Window {
     cookieconsent: {
-      initialise: (options: any) => void;
+      initialise: (options: any) => void; // eslint-disable-line @typescript-eslint/no-explicit-any
     };
   }
 }
