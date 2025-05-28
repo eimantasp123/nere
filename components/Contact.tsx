@@ -39,6 +39,7 @@ const Contact = () => {
 
   // Function to handle form submission
   const onSubmit = async (data: ContactFormData) => {
+    console.log("Form data:", data);
     const token = await recaptchaRef.current?.executeAsync();
     recaptchaRef.current?.reset();
 
@@ -46,6 +47,11 @@ const Contact = () => {
       toast.error("reCAPTCHA nepavyko patvirtinti.");
       return;
     }
+
+    console.log("reCAPTCHA token:", token);
+    // Validate reCAPTCHA token
+
+    console.log("Sending data to the server...");
 
     // Send data to the server
     const res = await fetch("/api/contact", {

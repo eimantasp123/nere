@@ -8,6 +8,7 @@ export async function POST(req: Request) {
     return new Response("Missing fields", { status: 400 });
   }
   try {
+    console.log("Validating reCAPTCHA...", { token });
     // Validate reCAPTCHA (v3)
     const recaptchaRes = await fetch(
       `https://www.google.com/recaptcha/api/siteverify`,
@@ -20,6 +21,7 @@ export async function POST(req: Request) {
 
     const recaptchaData = await recaptchaRes.json();
     if (!recaptchaData.success || recaptchaData.score < 0.5) {
+      console.error("reCAPTCHA validation failed", recaptchaData);
       return new Response("reCAPTCHA failed", { status: 400 });
     }
 
@@ -36,6 +38,8 @@ export async function POST(req: Request) {
         rejectUnauthorized: process.env.NODE_ENV === "production",
       },
     });
+
+    console.log("Sending email...");
 
     await transporter.sendMail({
       from: `"Nere.lt" <${process.env.EMAIL_USER}>`,

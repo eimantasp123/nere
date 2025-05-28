@@ -7,8 +7,8 @@ export const CookieBanner = () => {
   useEffect(() => {
     import("cookieconsent").then(() => {
       if (typeof window !== "undefined" && "cookieconsent" in window) {
-        // @ts-ignore because TS doesn't know about `window.cookieconsent`
-        window.cookieconsent.initialise({
+        // TypeScript fix: declare cookieconsent type
+        (window as any).cookieconsent.initialise({
           palette: {
             popup: { background: "#000" },
             button: { background: "#9CD2D1" },
