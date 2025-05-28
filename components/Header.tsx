@@ -3,16 +3,14 @@
 import { AlignJustify, X } from "lucide-react";
 import Image from "next/image";
 import Link from "next/link";
-import { usePathname, useRouter } from "next/navigation";
+import { useRouter } from "next/navigation";
 import { useEffect, useRef, useState } from "react";
-import ProfileImageWitMenu from "./ProfileImageWitMenu";
 
 const links = [
-  { href: "#home", label: "Pradžia" },
+  { href: "/", label: "Pradžia" },
   { href: "#about-me", label: "Apie mane" },
   { href: "#services", label: "Paslaugos" },
   { href: "#contacts", label: "Kontaktai" },
-  { href: "/dashboard", label: "Kliento portalas" },
 ];
 
 /**
@@ -21,17 +19,8 @@ const links = [
 const Header = () => {
   const headerRef = useRef<HTMLDivElement>(null);
   const mobileMenuRef = useRef<HTMLDivElement>(null);
-  const router = useRouter();
   const [open, setOpen] = useState(false);
-  const pathname = usePathname();
   const [menuOpen, setMenuOpen] = useState(false);
-
-  useEffect(() => {
-    if (pathname !== "/") {
-      router.prefetch("/");
-    }
-    router.prefetch("/dashboard");
-  }, [router, pathname]);
 
   useEffect(() => {
     let lastScrollTop = 0;
@@ -79,7 +68,7 @@ const Header = () => {
   return (
     <section
       ref={headerRef}
-      className="bg-background-primary sticky top-0 z-50 w-full border-b border-neutral-400/80 transition-transform duration-300"
+      className="bg-background-primary sticky top-0 z-50 w-full border-b border-neutral-400/40 transition-transform duration-300"
     >
       <header className="container mx-auto flex items-center px-4 py-5">
         {/* Logo */}
@@ -119,21 +108,20 @@ const Header = () => {
 
           {/* Book appointment button */}
           <Link
-            href="/booking"
-            className="hover:bg-primary hidden cursor-pointer rounded-full bg-neutral-800 px-8 py-3 text-sm text-white shadow-sm transition-colors duration-200 ease-in-out hover:text-black lg:block"
+            href="https://watalook.lt/beauty-specialist/nere-head-spa"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="hover:bg-primary hidden cursor-pointer rounded-full bg-neutral-800 px-10 py-3 text-sm text-white shadow-sm transition-colors duration-200 ease-in-out hover:text-black lg:block"
           >
             Rezervuoti laiką
           </Link>
-
-          {/* Profile image with menu  */}
-          <ProfileImageWitMenu open={open} setOpen={setOpen} />
         </div>
       </header>
 
       {/* Mobile Menu */}
       <div
         ref={mobileMenuRef}
-        className={`bg-background absolute top-19 right-0 left-0 z-20 flex w-full items-center justify-center overflow-hidden border-t-[1px] transition-all duration-300 ease-in-out lg:hidden ${menuOpen ? "h-70" : "h-0"}`}
+        className={`bg-background absolute top-[75px] right-0 left-0 z-20 flex w-full items-center justify-center overflow-hidden transition-all duration-300 ease-in-out lg:hidden ${menuOpen ? "h-70" : "h-0"}`}
       >
         <nav>
           <NavList closeHandler={() => setMenuOpen(false)} />
@@ -151,13 +139,7 @@ const NavList = ({ closeHandler }: { closeHandler?: () => void }) => {
   const router = useRouter();
 
   const handleScroll = (href: string) => {
-    if (href === "#home") {
-      router.push("/");
-    } else if (href === "/dashboard") {
-      router.push("/dashboard");
-    } else {
-      router.push(`/${href}`);
-    }
+    router.push(`/${href}`);
 
     if (closeHandler) {
       closeHandler();

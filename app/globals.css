@@ -10,7 +10,7 @@
   --secondary: #c8e5d9;
   --secondary-dark: #b8d1c4;
   --text-color: #383838;
-  --border: #a0a0a0;
+  --border: #dfdddd;
   --foreground: #383838;
   --popover-foreground: #383838;
 
@@ -102,7 +102,7 @@ html {
   scroll-behavior: smooth;
 }
 
-@layer base {
+/* @layer base {
   h1 {
     @apply font-marcellus text-4xl leading-tight md:text-5xl;
   }
@@ -132,5 +132,46 @@ html {
   }
   button {
     @apply cursor-pointer;
+  }
+} */
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground flex min-h-[100vh] flex-col;
+  }
+  button {
+    @apply cursor-pointer;
+  }
+  h1,
+  h2,
+  h3,
+  h4,
+  h5 {
+    font-family: "Marcellus", serif;
+  }
+  p,
+  h6 {
+    font-family: "Plus Jakarta Sans", sans-serif;
+  }
+  p {
+    @apply leading-[28px];
+  }
+  h1 {
+    @apply text-4xl leading-tight font-medium md:text-5xl md:leading-tight;
+  }
+  h2 {
+    @apply text-3xl leading-tight lg:text-4xl lg:leading-tight xl:text-5xl xl:leading-tight;
+  }
+  h3 {
+    @apply text-2xl leading-tight lg:text-3xl;
+  }
+  h5 {
+    @apply text-2xl leading-tight;
+  }
+  h6 {
+    @apply text-primary-dark text-xs font-bold tracking-[5px] uppercase md:text-sm;
   }
 }

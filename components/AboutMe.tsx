@@ -19,7 +19,7 @@ const AboutMe = () => {
           />
         </div>
         <div className="flex-1 space-y-6">
-          <h4>Apie mane</h4>
+          <h6>Apie mane</h6>
           <h2>Yoga Is the Journey of the Self, to the Self</h2>
           <hr className="h-[2px] w-24" />
           <p className="text-text leading-[28px]">
@@ -40,12 +40,20 @@ const AboutMe = () => {
               <p className="text-text text-sm">Lorem ipsum dolor sit amet</p>
             </div>
             <div className="flex items-center gap-2">
-              <div className="bg-secondary hover:bg-secondary-dark flex h-8 w-8 cursor-pointer items-center justify-center rounded-full transition-all duration-200 ease-in-out hover:-translate-y-[2px]">
+              <a
+                href="https://www.facebook.com/nerytee"
+                target="_blank"
+                className="bg-secondary hover:bg-secondary-dark flex h-8 w-8 cursor-pointer items-center justify-center rounded-full transition-all duration-200 ease-in-out hover:-translate-y-[2px]"
+              >
                 <Facebook strokeWidth={1.5} className="size-4" />
-              </div>
-              <div className="bg-secondary hover:bg-secondary-dark flex h-8 w-8 cursor-pointer items-center justify-center rounded-full transition-all duration-200 ease-in-out hover:-translate-y-[2px]">
+              </a>
+              <a
+                href="https://www.instagram.com/neringap_/"
+                target="_blank"
+                className="bg-secondary hover:bg-secondary-dark flex h-8 w-8 cursor-pointer items-center justify-center rounded-full transition-all duration-200 ease-in-out hover:-translate-y-[2px]"
+              >
                 <Instagram strokeWidth={1.5} className="size-4" />
-              </div>
+              </a>
             </div>
           </div>
         </div>

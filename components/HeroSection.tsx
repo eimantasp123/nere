@@ -1,5 +1,4 @@
 import Image from "next/image";
-import Link from "next/link";
 
 /**
  * * HeroSection component displays a hero section with a welcome message and images.
@@ -10,7 +9,7 @@ async function HeroSection() {
     <section id="home" className="bg-background-primary">
       <div className="container mx-auto flex flex-col items-center gap-16 px-4 py-14 lg:flex-row">
         <div className="relative flex-1 space-y-6">
-          <h4>Welcome to Sparka</h4>
+          <h6>Welcome to Sparka</h6>
           <h1 className="mb-10">Awaken Your Potential Through Yoga</h1>
           <hr className="h-[2px] w-24" />
           <p>
@@ -25,12 +24,13 @@ async function HeroSection() {
             >
               Paslaugos
             </a>
-            <Link
-              href="/booking"
+            <a
+              href="https://watalook.lt/beauty-specialist/nere-head-spa"
+              target="_blank"
               className="hover:bg-secondary rounded-full bg-neutral-800 px-10 py-3 text-sm text-white shadow-sm transition-colors duration-200 ease-in-out hover:text-black lg:hidden"
             >
               Rezervuoti laiką
-            </Link>
+            </a>
           </div>
         </div>
         <div className="flex h-[250px] flex-1 gap-4 sm:h-[300px] md:h-[550px] md:gap-8">

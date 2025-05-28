@@ -10,7 +10,7 @@ const Contact = () => {
   return (
     <section
       id="contacts"
-      className="bg-background relative container mx-auto grid items-center gap-14 px-4 pt-14 pb-8 md:gap-24 lg:grid-cols-2 lg:py-20"
+      className="bg-background relative container mx-auto grid items-center gap-14 px-4 pt-14 pb-8 md:gap-24 lg:grid-cols-2 lg:pb-28"
     >
       <div className="relative order-1 h-[400px] flex-1 lg:order-none lg:h-[720px]">
         <Image
@@ -43,7 +43,7 @@ const Contact = () => {
         </div>
       </div>
       <div className="flex-1 space-y-6">
-        <h4>Our Contact</h4>
+        <h6>Our Contact</h6>
         <h2>Get in Touch with Us</h2>
         <p>
           Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit

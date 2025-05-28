@@ -1,4 +1,13 @@
+"use client";
+import { useResponsiveCarouselConfig } from "@/utils/useResponsiveCarouselConfig";
 import { WandSparkles } from "lucide-react";
+import {
+  Carousel,
+  CarouselContent,
+  CarouselItem,
+  CarouselNext,
+  CarouselPrevious,
+} from "./ui/carousel";
 
 const content = [
   {
@@ -22,29 +31,60 @@ const content = [
       "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper.",
     icon: <WandSparkles className="text-primary size-8 lg:size-11" />,
   },
+  {
+    id: 4,
+    title: "Bespoke Approach",
+    description:
+      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper.",
+    icon: <WandSparkles className="text-primary size-8 lg:size-11" />,
+  },
 ];
 
 /**
  * * WhyChooseUs component displays a section with a title, subtitle, and a list of features or benefits.
  */
 const WhyChooseUs = () => {
+  const { showArrows } = useResponsiveCarouselConfig(content!.length);
+
   return (
     <section className="bg-background">
       <div className="container mx-auto space-y-6 px-4 py-8 text-center lg:py-20">
-        <h4>Why Choose Us</h4>
+        <h6>Why Choose Us</h6>
         <h2>Experience Peace With Every Pose</h2>
-        <div className="scrollbar-none flex gap-8 overflow-x-auto py-8 lg:py-12">
-          {content.map((obj) => (
-            <div
-              key={obj.id}
-              className="bg-background-primary min-w-[300px] flex-1 space-y-4 rounded-tl-2xl rounded-tr-[100px] rounded-b-2xl p-7 text-start lg:p-9"
-            >
-              {obj.icon}
-              <h5>{obj.title}</h5>
-              <p className="text-text leading-[28px]">{obj.description}</p>
+        {content && (
+          <Carousel
+            opts={{
+              align: "start",
+            }}
+            className="flex w-full py-8 lg:py-12"
+          >
+            <CarouselContent className="flex-1">
+              {content.map((obj, index) => (
+                <CarouselItem
+                  key={index}
+                  className="flex-none basis-full md:basis-1/2 lg:basis-1/3"
+                >
+                  <div className="bg-background-primary h-full w-full space-y-4 rounded-tl-2xl rounded-tr-[100px] rounded-b-2xl p-7 text-start lg:p-9">
+                    {obj.icon}
+                    <h5>{obj.title}</h5>
+                    <p className="text-text leading-[28px]">
+                      {obj.description}
+                    </p>
+                  </div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <div className="absolute top-0 left-0 flex w-full items-center justify-between px-4 lg:px-0">
+              {showArrows && (
+                <>
+                  <CarouselPrevious className="absolute top-0 left-0" />
+
+                  <CarouselNext className="absolute top-0 right-0" />
+                </>
+              )}
             </div>
-          ))}
-        </div>
+          </Carousel>
+        )}
       </div>
     </section>
   );

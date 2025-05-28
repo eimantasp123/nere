@@ -4,7 +4,7 @@ import Image from "next/image";
 import { useRouter } from "next/navigation";
 
 const links = [
-  { href: "#home", label: "Pradžia" },
+  { href: "/", label: "Pradžia" },
   { href: "#about-me", label: "Apie mane" },
   { href: "#services", label: "Paslaugos" },
   { href: "#contacts", label: "Kontaktai" },
@@ -14,11 +14,7 @@ const Footer = () => {
   const router = useRouter();
 
   const handleScroll = (id: string) => {
-    if (id === "#home") {
-      router.push("/");
-    } else {
-      router.push(`/${id}`);
-    }
+    router.push(`/${id}`);
   };
 
   return (

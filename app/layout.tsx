@@ -36,6 +36,7 @@ export default function RootLayout({
   return (
     <html lang="lt">
       <body
+        cz-shortcut-listen="true"
         className={`${marcellus.variable} ${plusJakartaSans.variable} antialiased`}
       >
         <Header />
