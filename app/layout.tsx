@@ -4,6 +4,7 @@ import type { Metadata, Viewport } from "next";
 import { Marcellus, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
 import { CookieBanner } from "@/components/ui/CookieBanner";
+import { Toaster } from "@/components/ui/sonner";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -43,6 +44,7 @@ export default function RootLayout({
         <Header />
         {children}
         <CookieBanner />
+        <Toaster position="bottom-center" />
         <Footer />
       </body>
     </html>
