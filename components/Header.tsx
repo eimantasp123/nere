@@ -79,7 +79,7 @@ const Header = () => {
   return (
     <section
       ref={headerRef}
-      className="bg-background-primary fixed top-0 z-50 w-full border-b border-neutral-400/80 transition-transform duration-300"
+      className="bg-background-primary sticky top-0 z-50 w-full border-b border-neutral-400/80 transition-transform duration-300"
     >
       <header className="container mx-auto flex items-center px-4 py-5">
         {/* Logo */}
