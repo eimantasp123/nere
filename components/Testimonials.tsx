@@ -20,11 +20,13 @@ const Testimonials = () => {
   return (
     <section className="bg-background">
       <div className="container mx-auto space-y-6 px-4 py-10 text-center lg:pt-20">
-        <h6>Testimonials</h6>
-        <h2>Sweet Reviews From Our Students</h2>
+        <h6>Atsiliepimai</h6>
+        <h2>Šilti žodžiai iš mūsų klientų</h2>
         <p className="mx-auto max-w-[800px]">
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-          tellus, luctus nec ullamcorper mattis, dapibus leo.
+          Mūsų klientai vertina ne tik išskirtinį masažo pojūtį, bet ir jaukią
+          atmosferą bei nuoširdų dėmesį. Skaitykite jų patirtis ir sužinokite,
+          kodėl japoniškas galvos masažas tapo jų mėgstama atsipalaidavimo
+          forma.
         </p>
 
         <div className="flex gap-8 pt-10 text-start lg:pt-5">

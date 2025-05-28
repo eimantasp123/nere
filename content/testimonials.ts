@@ -1,30 +1,30 @@
 export const testimonialsContent = [
   {
-    name: "Linda Watson",
-    rating: 4.5,
-    title: "Yoga Enthusiast",
+    name: "Eimantas",
+    rating: 5,
+    title: "Nepamirštama patirtis",
     review:
-      "I've found my sanctuary at this yoga studio. The instructors are knowledgeable and the atmosphere is calming.",
+      "Pirmą kartą lankiausi rituale ir negaliu patikėti, kaip stipriai atsipalaidavau. Galvos masažas – tiesiog magija! Jau po pirmo karto pajutau skirtumą tiek galvoje, tiek emocijose.",
   },
   {
     name: "John Doe",
     rating: 5,
-    title: "Yoga Beginner",
+    title: "Ritualas tapo įpročiu",
     review:
-      "This place has changed my life! I feel more relaxed and centered than ever before.",
+      "Šis ritualas man tapo mėnesiniu įpročiu. Plaukai tapo sveikesni, o streso lygis akivaizdžiai sumažėjo. Rekomenduoju visiems, kurie nori atsikvėpti nuo miesto šurmulio.",
   },
   {
     name: "Jane Smith",
-    rating: 4,
-    title: "Yoga Practitioner",
+    rating: 4.5,
+    title: "Tikra ramybės oazė",
     review:
-      "A wonderful experience! The classes are well-structured and the community is welcoming.",
+      "Aromaterapija, šilti garai, švelnūs judesiai – visa tai sukuria neįtikėtiną atmosferą. Po procedūros jaučiausi tarsi po mini atostogų. Ačiū už rūpestį ir profesionalumą.",
   },
   {
     name: "Jane Smith",
-    rating: 4,
-    title: "Yoga Practitioner",
+    rating: 5,
+    title: "Mano plaukai atgimė",
     review:
-      "A wonderful experience! The classes are well-structured and the community is welcoming.",
+      "Po kelių vizitų pastebėjau, kad plaukai žymiai mažiau slenka, atrodo žvilgantys ir stipresni. Tai ne tik išorės, bet ir vidinės pusiausvyros atkūrimas.",
   },
 ];

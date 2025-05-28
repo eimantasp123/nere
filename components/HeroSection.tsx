@@ -9,13 +9,16 @@ async function HeroSection() {
     <section id="home" className="bg-background-primary">
       <div className="container mx-auto flex flex-col items-center gap-16 px-4 py-14 lg:flex-row">
         <div className="relative flex-1 space-y-6">
-          <h6>Welcome to Sparka</h6>
-          <h1 className="mb-10">Awaken Your Potential Through Yoga</h1>
+          <h6>Jūsų ramybės ritualas</h6>
+          <h1 className="mb-10">
+            Atraskite harmoniją per japoniškus galvos masažo ritualus
+          </h1>
           <hr className="h-[2px] w-24 border-neutral-400" />
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-            tellus, luctus nec ullamcorper. Lorem ipsum dolor sit amet,
-            consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper.
+            Nere Head Spa – tai daugiau nei grožio procedūra. Tai sąmoningas
+            pabėgimas į ramybę, kur rūpestingai atliekami galvos masažo ritualai
+            atgaivina plaukus, atpalaiduoja kūną ir nuramina protą. Kiekvienas
+            apsilankymas – tai kelionė į vidinę pusiausvyrą.
           </p>
           <div className="flex gap-2 md:gap-4">
             <a

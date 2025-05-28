@@ -96,7 +96,7 @@ const Contact = () => {
             className="text-text font-marcellus flex items-center gap-2 text-sm transition-colors duration-200 ease-in-out hover:text-neutral-400"
           >
             <Phone strokeWidth={1.5} className="text-primary-dark" />
-            <span>+1 (234) 567 890 00</span>
+            <span>+370 629 00509</span>
           </a>
           <a
             href="mailto:labas@nere.lt"
@@ -109,11 +109,13 @@ const Contact = () => {
         </div>
       </div>
       <div className="flex-1 space-y-6">
-        <h6>Our Contact</h6>
-        <h2>Get in Touch with Us</h2>
+        <h6>Kontaktai</h6>
+        <h2>Susisiekite su mumis</h2>
         <p>
-          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
-          tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.
+          Norite pasilepinti japonišku galvos masažu ar turite klausimų apie
+          mūsų paslaugas? Užpildykite žemiau esančią formą arba susisiekite su
+          mumis tiesiogiai – mielai atsakysime į visus Jūsų klausimus ir
+          padėsime pasirinkti tinkamiausią laiką apsilankymui.
         </p>
         <form
           onSubmit={handleSubmit(onSubmit)}

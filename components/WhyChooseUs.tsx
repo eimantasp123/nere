@@ -1,6 +1,6 @@
 "use client";
 import { useResponsiveCarouselConfig } from "@/utils/useResponsiveCarouselConfig";
-import { WandSparkles } from "lucide-react";
+import { Droplets, Flower2, Leaf, UserRoundCheck } from "lucide-react";
 import {
   Carousel,
   CarouselContent,
@@ -12,31 +12,31 @@ import {
 const content = [
   {
     id: 1,
-    title: "Bespoke Approach",
+    title: "Japoniška masažo filosofija",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper.",
-    icon: <WandSparkles className="text-primary size-8 lg:size-11" />,
+      "Remiamės giliomis tradicijomis – kiekvienas judesys apgalvotas, kad atkurtų vidinę pusiausvyrą ir nuramintų protą.",
+    icon: <Flower2 className="text-primary size-8 lg:size-11" />,
   },
   {
     id: 2,
-    title: "Bespoke Approach",
+    title: "Individualus dėmesys kiekvienam",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper.",
-    icon: <WandSparkles className="text-primary size-8 lg:size-11" />,
+      "Ritualai pritaikomi pagal jūsų poreikius – nuo streso mažinimo iki galvos odos būklės gerinimo.",
+    icon: <UserRoundCheck className="text-primary size-8 lg:size-11" />,
   },
   {
     id: 3,
-    title: "Bespoke Approach",
+    title: "Aukščiausios kokybės priemonės",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper.",
-    icon: <WandSparkles className="text-primary size-8 lg:size-11" />,
+      "Naudojame tik profesionalias, gamtai draugiškas Davines linijos priemones, kurios puoselėja ir plaukus, ir pojūčius.",
+    icon: <Droplets className="text-primary size-8 lg:size-11" />,
   },
   {
     id: 4,
-    title: "Bespoke Approach",
+    title: "Ramybės oazė mieste",
     description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper.",
-    icon: <WandSparkles className="text-primary size-8 lg:size-11" />,
+      "Mūsų studijoje laikas sustoja – jauki aplinka, kvapai ir garsai sukuria visišką atsipalaidavimą nuo pirmos minutės.",
+    icon: <Leaf className="text-primary size-8 lg:size-11" />,
   },
 ];
 
@@ -49,8 +49,8 @@ const WhyChooseUs = () => {
   return (
     <section className="bg-background">
       <div className="container mx-auto space-y-6 px-4 py-8 text-center lg:py-20">
-        <h6>Why Choose Us</h6>
-        <h2>Experience Peace With Every Pose</h2>
+        <h6>Kodėl verta rinktis mus</h6>
+        <h2>Meistriškumas, kuris ramina kūną ir protą</h2>
         {content && (
           <Carousel
             opts={{

@@ -38,8 +38,10 @@ const Services = () => {
     >
       <div className="container mx-auto">
         <div className="space-y-4 px-4 pt-10 lg:pt-5">
-          <h6>Our Process</h6>
-          <h2 className="pb-8">Balance Your Body, Balance Your Mind</h2>
+          <h6>Procedūros</h6>
+          <h2 className="pb-8">
+            Atsipalaiduokite. Atgaivinkite mintis. Pajuskite harmoniją.
+          </h2>
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
             {servicesContent &&
               servicesContent.map((service, index) => {
@@ -147,7 +149,7 @@ const Services = () => {
             <DialogFooter className="space-x-2">
               <button className="flex pt-2" onClick={handleCloseModal}>
                 <a
-                  href="https://watalook.lt/beauty-specialist/nere-head-spa"
+                  href="https://www.treatwell.lt/salonas/nere-head-spa/"
                   target="_blank"
                   className="font-jakarta hover:bg-background w-full rounded-full border border-transparent bg-neutral-800 px-10 py-3 text-sm font-normal text-white transition-all duration-300 ease-in-out hover:border-neutral-500 hover:text-neutral-800"
                 >

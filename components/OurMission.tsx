@@ -23,10 +23,10 @@ const OurMission = () => {
             />
           </div>
           <div className="flex-1 space-y-5 text-white">
-            <h6 className="text-white/70">Our Mission</h6>
+            <h6 className="text-white/70">Mūsų misija</h6>
             <h2>
-              Unwind and Recharge with Yoga. Lorem ipsum dolor sit amet, consec
-              tetur adipiscing.
+              Atgaivinti protą, atpalaiduoti kūną – ritualais, kurie įkvepia
+              ramybę ir gyvybingumą iš vidaus.
             </h2>
           </div>
         </div>
