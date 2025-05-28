@@ -18,7 +18,7 @@ const Footer = () => {
   };
 
   return (
-    <section className="font-jakarta bg-neutral-900">
+    <section className="font-jakarta mt-auto bg-neutral-900">
       <div className="container mx-auto flex flex-col items-center justify-between gap-4 p-8 lg:flex-row">
         <nav className="flex flex-1">
           <div className="font-marcellus flex flex-wrap justify-center gap-8 text-sm text-nowrap md:gap-10">

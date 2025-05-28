@@ -3,6 +3,7 @@ import Header from "@/components/Header";
 import type { Metadata, Viewport } from "next";
 import { Marcellus, Plus_Jakarta_Sans } from "next/font/google";
 import "./globals.css";
+import { CookieBanner } from "@/components/ui/CookieBanner";
 
 export const viewport: Viewport = {
   width: "device-width",
@@ -41,6 +42,7 @@ export default function RootLayout({
       >
         <Header />
         {children}
+        <CookieBanner />
         <Footer />
       </body>
     </html>

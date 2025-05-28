@@ -11,7 +11,7 @@ async function HeroSection() {
         <div className="relative flex-1 space-y-6">
           <h6>Welcome to Sparka</h6>
           <h1 className="mb-10">Awaken Your Potential Through Yoga</h1>
-          <hr className="h-[2px] w-24" />
+          <hr className="h-[2px] w-24 border-neutral-400" />
           <p>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
             tellus, luctus nec ullamcorper. Lorem ipsum dolor sit amet,
@@ -20,14 +20,14 @@ async function HeroSection() {
           <div className="flex gap-2 md:gap-4">
             <a
               href="#services"
-              className="bg-primary rounded-full px-10 py-3 text-sm text-black shadow-sm transition-colors duration-200 ease-in-out hover:bg-neutral-800 hover:text-white"
+              className="bg-primary rounded-full px-8 py-3 text-sm text-black shadow-sm transition-colors duration-200 ease-in-out hover:bg-neutral-800 hover:text-white sm:px-10"
             >
               Paslaugos
             </a>
             <a
               href="https://watalook.lt/beauty-specialist/nere-head-spa"
               target="_blank"
-              className="hover:bg-secondary rounded-full bg-neutral-800 px-10 py-3 text-sm text-white shadow-sm transition-colors duration-200 ease-in-out hover:text-black lg:hidden"
+              className="hover:bg-secondary rounded-full bg-neutral-800 px-8 py-3 text-sm text-white shadow-sm transition-colors duration-200 ease-in-out hover:text-black sm:px-10 lg:hidden"
             >
               Rezervuoti laiką
             </a>

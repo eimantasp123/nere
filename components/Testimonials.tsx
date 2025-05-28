@@ -7,47 +7,15 @@ import {
   CarouselNext,
   CarouselPrevious,
 } from "./ui/carousel";
-
-const testimonials = [
-  {
-    name: "Linda Watson",
-    age: 26,
-    rating: 4.5,
-    title: "Yoga Enthusiast",
-    review:
-      "I've found my sanctuary at this yoga studio. The instructors are knowledgeable and the atmosphere is calming.",
-  },
-  {
-    name: "John Doe",
-    age: 30,
-    rating: 5,
-    title: "Yoga Beginner",
-    review:
-      "This place has changed my life! I feel more relaxed and centered than ever before.",
-  },
-  {
-    name: "Jane Smith",
-    age: 28,
-    rating: 4,
-    title: "Yoga Practitioner",
-    review:
-      "A wonderful experience! The classes are well-structured and the community is welcoming.",
-  },
-  {
-    name: "Jane Smith",
-    age: 28,
-    rating: 4,
-    title: "Yoga Practitioner",
-    review:
-      "A wonderful experience! The classes are well-structured and the community is welcoming.",
-  },
-];
+import { testimonialsContent } from "@/content/testimonials";
 
 /**
  * * Testimonials component displays a section with testimonials from clients.
  */
 const Testimonials = () => {
-  const { showArrows } = useResponsiveCarouselConfig(testimonials!.length);
+  const { showArrows } = useResponsiveCarouselConfig(
+    testimonialsContent!.length,
+  );
 
   return (
     <section className="bg-background">
@@ -60,7 +28,7 @@ const Testimonials = () => {
         </p>
 
         <div className="flex gap-8 pt-10 text-start lg:pt-5">
-          {testimonials && (
+          {testimonialsContent && (
             <Carousel
               opts={{
                 align: "start",
@@ -68,14 +36,14 @@ const Testimonials = () => {
               className="flex w-full py-8 lg:py-12"
             >
               <CarouselContent className="flex-1">
-                {testimonials.map((testimonial, index) => (
+                {testimonialsContent.map((testimonial, index) => (
                   <CarouselItem
                     key={index}
                     className="flex-none basis-full md:basis-1/2 lg:basis-1/3"
                   >
                     <div
                       key={index}
-                      className="bg-background-primary min-w-[300px] flex-1 space-y-6 rounded-3xl p-9"
+                      className="bg-background-primary h-full min-w-[300px] flex-1 space-y-6 rounded-3xl p-9"
                     >
                       <StarRating rating={testimonial.rating} />
                       <h5>{testimonial.title}</h5>

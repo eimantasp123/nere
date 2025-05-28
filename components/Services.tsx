@@ -11,58 +11,7 @@ import {
 import { Clock, Euro } from "lucide-react";
 import { useState } from "react";
 import { Button } from "./ui/button";
-
-const services = [
-  {
-    id: "1",
-    title: "Yoga",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper.",
-    price: 20,
-    duration: 60,
-    enableModal: true,
-    modalContent: {
-      enableAditionalNote: true,
-      additionalNote: [
-        { note: "Please bring your own yoga mat." },
-        { note: "Wear comfortable clothing." },
-      ],
-      description:
-        "Join our yoga class to improve flexibility, strength, and relaxation.",
-      featuresTitle: "What to expect:",
-      features: [
-        { feature: "Guided meditation" },
-        { feature: "Breathing exercises" },
-        { feature: "Posture correction" },
-      ],
-      note: "Classes are suitable for all levels.",
-    },
-  },
-  {
-    id: "2",
-    title: "Meditation",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper.",
-  },
-  {
-    id: "3",
-    title: "Wellness",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper.",
-  },
-  {
-    id: "4",
-    title: "Wellnesdss",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper.",
-  },
-  {
-    id: "5",
-    title: "Wellnesddss",
-    description:
-      "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper.",
-  },
-];
+import { servicesContent } from "@/content/services";
 
 /**
  * * Services component displays a section with a title, subtitle, and a list of services.
@@ -92,10 +41,10 @@ const Services = () => {
           <h6>Our Process</h6>
           <h2 className="pb-8">Balance Your Body, Balance Your Mind</h2>
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
-            {services &&
-              services.map((service, index) => {
-                const isLastItem = index === services.length - 1;
-                const isOddLength = services.length % 2 !== 0;
+            {servicesContent &&
+              servicesContent.map((service, index) => {
+                const isLastItem = index === servicesContent.length - 1;
+                const isOddLength = servicesContent.length % 2 !== 0;
 
                 const shouldSpanTwoCols = isLastItem && isOddLength;
 
@@ -117,6 +66,7 @@ const Services = () => {
                             <Button
                               onClick={() => handleDisplayModalContent(service)}
                               variant="secondary"
+                              className="shadow-none"
                             >
                               Skaityti daugiau
                             </Button>
@@ -189,7 +139,7 @@ const Services = () => {
                 </div>
               )}
               {displayModalContent.modalContent?.note && (
-                <div className="font-jakarta mt-4 rounded-xl bg-[#c8e5d946] px-4 py-3 text-sm text-neutral-700">
+                <div className="font-jakarta mt-2 rounded-xl bg-[#c8e5d946] px-4 py-3 text-sm text-neutral-700">
                   {displayModalContent.modalContent?.note}
                 </div>
               )}

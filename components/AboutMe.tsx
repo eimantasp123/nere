@@ -21,7 +21,7 @@ const AboutMe = () => {
         <div className="flex-1 space-y-6">
           <h6>Apie mane</h6>
           <h2>Yoga Is the Journey of the Self, to the Self</h2>
-          <hr className="h-[2px] w-24" />
+          <hr className="h-[2px] w-24 border-neutral-400" />
           <p className="text-text leading-[28px]">
             Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit
             tellus, luctus nec ullamcorper. Lorem ipsum dolor sit amet,
