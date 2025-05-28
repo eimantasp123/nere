@@ -3,12 +3,20 @@
 import { useEffect } from "react";
 import "cookieconsent/build/cookieconsent.min.css";
 
+// Deklaruok globalų objektą
+declare global {
+  interface Window {
+    cookieconsent: {
+      initialise: (options: any) => void;
+    };
+  }
+}
+
 export const CookieBanner = () => {
   useEffect(() => {
     import("cookieconsent").then(() => {
-      if (typeof window !== "undefined" && "cookieconsent" in window) {
-        // TypeScript fix: declare cookieconsent type
-        (window as any).cookieconsent.initialise({
+      if (typeof window !== "undefined" && window.cookieconsent) {
+        window.cookieconsent.initialise({
           palette: {
             popup: { background: "#000" },
             button: { background: "#9CD2D1" },
