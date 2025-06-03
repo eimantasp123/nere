@@ -79,6 +79,7 @@ async function HeroSection() {
               alt="Hero image"
               width={1000}
               height={550}
+              quality={80}
               className="h-full w-full rounded-tl-[200px] rounded-tr-3xl rounded-b-3xl"
               style={{
                 objectFit: "cover",
@@ -95,6 +96,7 @@ async function HeroSection() {
               alt="Hero image"
               width={1000}
               height={550}
+              quality={80}
               style={{
                 objectFit: "cover",
                 objectPosition: "right",

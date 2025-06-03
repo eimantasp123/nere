@@ -178,6 +178,8 @@ export default function GiftCardPage() {
                     width={600}
                     height={400}
                     className="rounded-lg"
+                    priority
+                    quality={80}
                   />
                 </DialogContent>
               </Dialog>
@@ -224,8 +226,8 @@ export default function GiftCardPage() {
             alt="Dovanų kuponas"
             fill
             className="rounded-tl-3xl rounded-tr-[200px] rounded-b-3xl object-cover"
-            // sizes="(max-width: 768px) 100vw, 50vw"
-            priority // optional for above-the-fold
+            priority
+            quality={80}
           />
         </div>
       </section>

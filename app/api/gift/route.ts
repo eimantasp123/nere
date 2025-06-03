@@ -50,7 +50,7 @@ export async function POST(req: Request) {
             <strong>El. Paštas:</strong> ${email}<br/>
             <strong>Kupono gavėjo vardas:</strong> ${recipient}<br/>
             <strong>Ritualas:</strong> ${ritual}<br/>
-            ${message ? `<strong>Žinutė:</strong> ${message}</p>` : null}`,
+            ${message ? `<strong>Žinutė:</strong> ${message}</p>` : ""}`,
     });
 
     return new Response("El. laiškas išssiųstas sėkmingai.", { status: 200 });
