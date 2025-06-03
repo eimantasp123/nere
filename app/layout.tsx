@@ -26,8 +26,22 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Nere | Japanese Head Spa Lithuania ",
-  description: "Japanese Head Spa Lithuania",
+  title: "Nere | Japoniškas galvos masažas Kaune",
+  description:
+    "Nere Head Spa – tai daugiau nei grožio procedūra. Tai sąmoningas pabėgimas į ramybę, kur rūpestingai atliekami galvos masažo ritualai atgaivina plaukus, atpalaiduoja kūną ir nuramina protą.",
+  openGraph: {
+    title: "Nere | Japoniškas galvos masažas Kaune",
+    description:
+      "Nere Head Spa – tai daugiau nei grožio procedūra. Tai sąmoningas pabėgimas į ramybę, kur rūpestingai atliekami galvos masažo ritualai atgaivina plaukus, atpalaiduoja kūną ir nuramina protą.",
+    images: [
+      {
+        url: "/hero-2.jpg", // Replace with your image URL
+        width: 1200,
+        height: 630,
+        alt: "Nere Head Spa",
+      },
+    ],
+  },
 };
 
 export default function RootLayout({
