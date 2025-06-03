@@ -24,7 +24,7 @@ async function HeroSection() {
           <div className="flex gap-2 md:gap-4">
             <a
               href="#services"
-              className="bg-primary rounded-full px-8 py-3 text-sm text-black shadow-sm transition-colors duration-200 ease-in-out hover:bg-neutral-800 hover:text-white sm:px-10"
+              className="bg-secondary rounded-full px-8 py-3 text-sm text-black shadow-sm transition-colors duration-200 ease-in-out hover:bg-neutral-800 hover:text-white sm:px-10"
             >
               Paslaugos
             </a>
