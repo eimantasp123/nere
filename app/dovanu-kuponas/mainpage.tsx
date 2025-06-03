@@ -143,7 +143,7 @@ export default function GiftCardPage() {
                       <SelectTrigger>
                         <SelectValue placeholder="Pasirinkite vieną iš nurodytų ritualų" />
                       </SelectTrigger>
-                      <SelectContent className="max-h-[200px] overflow-y-auto md:max-h-[600px]">
+                      <SelectContent className="max-h-[280px] w-[90vw] overflow-y-auto sm:w-full sm:max-w-full md:max-h-[600px]">
                         {options.map((option) => (
                           <SelectItem key={option.label} value={option.label}>
                             {option.label} – {option.duration} – {option.price}
