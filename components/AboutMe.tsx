@@ -12,7 +12,7 @@ const AboutMe = () => {
         <div className="relative order-1 h-[350px] w-full flex-1 sm:h-[450px] lg:order-none lg:h-[720px]">
           <Image
             src="/image2.jpg"
-            alt="Hero 1"
+            alt="Nere Head Spa"
             fill
             className="rounded-tl-3xl rounded-tr-[200px] rounded-b-3xl object-cover"
             priority

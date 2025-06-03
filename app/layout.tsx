@@ -38,7 +38,7 @@ export const metadata: Metadata = {
       "Nere Head Spa – tai daugiau nei grožio procedūra. Tai sąmoningas pabėgimas į ramybę, kur rūpestingai atliekami galvos masažo ritualai atgaivina plaukus, atpalaiduoja kūną ir nuramina protą.",
     images: [
       {
-        url: "/hero-2.jpg", // Replace with your image URL
+        url: "/hero-2.jpg",
         width: 1200,
         height: 630,
         alt: "Nere Head Spa",

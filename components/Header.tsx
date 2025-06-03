@@ -10,6 +10,7 @@ const links = [
   { href: "/", label: "Pradžia" },
   { href: "#about-me", label: "Apie mane" },
   { href: "#services", label: "Paslaugos" },
+  { href: "/dovanu-kuponas", label: "Dovanų kuponas" },
   { href: "#contacts", label: "Kontaktai" },
 ];
 
@@ -148,15 +149,31 @@ const NavList = ({ closeHandler }: { closeHandler?: () => void }) => {
 
   return (
     <div className="font-marcellus flex flex-col gap-6 text-nowrap sm:text-sm lg:flex-row lg:gap-10">
-      {links.map((link) => (
-        <button
-          key={link.href}
-          onClick={() => handleScroll(link.href)}
-          className="cursor-pointer transition-colors duration-200 ease-out hover:text-neutral-500"
-        >
-          {link.label}
-        </button>
-      ))}
+      {links.map((link) => {
+        if (link.href.startsWith("/")) {
+          return (
+            <Link
+              key={link.href}
+              href={link.href}
+              prefetch
+              onClick={() => handleScroll(link.href)}
+              className="text-text text-center transition-colors duration-200 ease-in-out hover:text-neutral-500"
+            >
+              {link.label}
+            </Link>
+          );
+        } else {
+          return (
+            <button
+              key={link.href}
+              onClick={() => handleScroll(link.href)}
+              className="cursor-pointer transition-colors duration-200 ease-out hover:text-neutral-500"
+            >
+              {link.label}
+            </button>
+          );
+        }
+      })}
     </div>
   );
 };

@@ -17,7 +17,7 @@ const OurMission = () => {
             />
           </div>
           <div className="flex-1 space-y-5 text-white">
-            <h6 className="text-white/90">Misija</h6>
+            <h6 className="text-white/90">Studijos misija</h6>
             <h2>
               Atgaivinti protą, atpalaiduoti kūną – ritualais, kurie įkvepia
               ramybę ir gyvybingumą iš vidaus.

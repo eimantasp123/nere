@@ -80,8 +80,8 @@ const Contact = () => {
     >
       <div className="relative order-1 h-[400px] flex-1 lg:order-none lg:h-[720px]">
         <Image
-          src="/hero-2.jpg"
-          alt="Hero 1"
+          src="/image5.jpeg"
+          alt="Nere Head Spa Kontaktai"
           fill
           className="rounded-tl-3xl rounded-tr-[200px] rounded-b-3xl object-cover"
         />

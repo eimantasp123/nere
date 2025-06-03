@@ -220,7 +220,7 @@ export default function GiftCardPage() {
 
         <div className="relative h-[300px] w-full sm:h-[400px] md:h-auto md:w-[500px] lg:h-[600px]">
           <Image
-            src="/image4.jpg"
+            src="/kuponai.jpeg"
             alt="Dovanų kuponas"
             fill
             className="rounded-tl-3xl rounded-tr-[200px] rounded-b-3xl object-cover"
