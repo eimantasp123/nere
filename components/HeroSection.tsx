@@ -54,7 +54,7 @@ async function HeroSection() {
             </div>
           </div>
           <div className="flex items-center gap-2 md:gap-2 lg:hidden">
-            <p className="text-sm">Sekite studijo veiklą:</p>
+            <p className="text-sm">Sekite studijos veiklą:</p>
             <a
               href="https://www.facebook.com/nere.head.spa"
               target="_blank"
