@@ -1,6 +1,6 @@
 export const testimonialsContent = [
   {
-    name: "Eimantas",
+    name: "Tadas",
     rating: 5,
     title: "Nepamirštama patirtis",
     review:
