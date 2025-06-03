@@ -176,7 +176,7 @@ export default function GiftCardPage() {
                     src="/plaukai.png"
                     alt="Plaukų ilgis"
                     width={600}
-                    height={400}
+                    height={600}
                     className="rounded-lg"
                     priority
                     quality={80}
