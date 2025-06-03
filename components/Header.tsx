@@ -108,7 +108,7 @@ const Header = () => {
 
           {/* Book appointment button */}
           <Link
-            href="https://www.treatwell.lt/salonas/nere-head-spa/"
+            href="https://book.treatwell.lt/salonas/nere-head-spa/"
             target="_blank"
             rel="noopener noreferrer"
             className="hover:bg-primary hidden cursor-pointer rounded-full bg-neutral-800 px-10 py-3 text-sm text-white shadow-sm transition-colors duration-200 ease-in-out hover:text-black lg:block"

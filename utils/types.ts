@@ -3,7 +3,10 @@ export interface Service {
   title: string;
   description: string;
   price: number;
-  duration: number;
+  duration: {
+    from: number;
+    to?: number;
+  };
   enableModal?: boolean | null;
   modalContent?: {
     enableAditionalNote?: boolean | null;

@@ -11,7 +11,7 @@ const AboutMe = () => {
       <div className="container mx-auto grid items-center gap-10 px-4 py-20 lg:grid-cols-2 lg:gap-24">
         <div className="relative order-1 h-[350px] w-full flex-1 sm:h-[450px] lg:order-none lg:h-[720px]">
           <Image
-            src="/hero-1.jpg"
+            src="/image2.jpg"
             alt="Hero 1"
             fill
             className="rounded-tl-3xl rounded-tr-[200px] rounded-b-3xl object-cover"
@@ -23,20 +23,21 @@ const AboutMe = () => {
           <h2>Ritualai ramybei, kuriuos kuriu iš širdies</h2>
           <hr className="h-[2px] w-24 border-neutral-400" />
           <p className="text-text leading-[28px]">
-            Esu Neringa – Nere Head Spa įkūrėja ir sąmoningo prisilietimo
-            praktikė. Po ilgos kelionės per grožio industriją ir asmeninį
-            tobulėjimą, atradau japoniško galvos masažo meno galią. Kiekvienas
-            seansas – tai ne tik galvos masažas, bet ir kvietimas sustoti,
-            atsipalaiduoti ir sugrįžti į save. Tikiu, kad švelnus prisilietimas,
-            rūpestis ir dėmesys – tai kelias į gilų atsipalaidavimą bei vidinę
-            ramybę.
+            Esu Neringa – „Nere Head Spa“ įkūrėja ir sertifikuota meistrė. Po
+            ilgos kelionės per grožio industriją ir asmeninį tobulėjimą atradau
+            japoniško galvos masažo meno galią. Kiekvienas seansas man – tai ne
+            tik masažas. Tai gilus galvos odos ir plaukų gydymas. Nes gražūs,
+            spindintys plaukai prasideda nuo švarios ir sveikos galvos odos.
+            Niekada nenorėjau būti tiesiog plaukų procedūrų meistrė. Norėjau
+            būti kažkuo daugiau – parodyti, kad plaukų priežiūra gali būti ne
+            tik naudinga, bet ir gydanti, atpalaiduojanti, tikra.
           </p>
           <div className="flex justify-between gap-4 pt-4">
             <div>
               <h4 className="font-marcellus text-sm font-bold tracking-widest uppercase">
-                Neringa Petrikaitė
+                Neringa Pocevičienė
               </h4>
-              <p className="text-text text-sm">NERE Head Spa įkūrėja</p>
+              <p className="text-text text-sm">Nere Head Spa įkūrėja</p>
             </div>
             <div className="flex items-center gap-2">
               <a

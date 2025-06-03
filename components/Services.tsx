@@ -40,7 +40,7 @@ const Services = () => {
         <div className="space-y-4 px-4 pt-10 lg:pt-5">
           <h6>Procedūros</h6>
           <h2 className="pb-8">
-            Atsipalaiduokite. Atgaivinkite mintis. Pajuskite harmoniją.
+            Ritualai, kurie ne tik puoselėja plaukus, bet ir gydo protą
           </h2>
           <div className="grid grid-cols-1 gap-5 md:grid-cols-2 md:gap-6">
             {servicesContent &&
@@ -94,7 +94,11 @@ const Services = () => {
                 <div className="font-jakarta flex items-center gap-2">
                   <span className="flex items-center gap-3 rounded-full border border-neutral-400 px-4 py-2 text-xs font-medium">
                     <Clock className="size-4" />
-                    {displayModalContent.duration} min
+                    {displayModalContent.duration.from}{" "}
+                    {displayModalContent.duration?.to
+                      ? `- ${displayModalContent.duration.to}`
+                      : null}{" "}
+                    min
                   </span>
                   <span className="flex items-center gap-3 rounded-full border border-neutral-400 px-4 py-2 text-xs font-medium">
                     <Euro className="size-4" />
@@ -149,7 +153,7 @@ const Services = () => {
             <DialogFooter className="space-x-2">
               <button className="flex pt-2" onClick={handleCloseModal}>
                 <a
-                  href="https://www.treatwell.lt/salonas/nere-head-spa/"
+                  href="https://book.treatwell.lt/salonas/nere-head-spa/"
                   target="_blank"
                   className="font-jakarta hover:bg-background w-full rounded-full border border-transparent bg-neutral-800 px-10 py-3 text-sm font-normal text-white transition-all duration-300 ease-in-out hover:border-neutral-500 hover:text-neutral-800"
                 >

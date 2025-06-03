@@ -4,8 +4,11 @@ export const servicesContent = [
     title: "Klasikinis ritualas",
     description:
       "Subalansuotas ritualas, apjungiantis esmines galvos odos ir plaukų priežiūros procedūras. Puikus pasirinkimas tiems, kurie nori atgauti pusiausvyrą, atsipalaiduoti ir pasirūpinti savo plaukais.",
-    price: 85,
-    duration: 90,
+    price: 80,
+    duration: {
+      from: 90,
+      to: 120,
+    },
     enableModal: true,
     modalContent: {
       enableAditionalNote: true,
@@ -45,7 +48,10 @@ export const servicesContent = [
     description:
       "Gydomasis SPA ritualas, skirtas jūsų plaukų ir galvos odos atgaivai. Derinant profesionalias priemones su švelniomis technikomis, ši procedūra atkuria plaukų gyvybingumą ir suteikia gilų atsipalaidavimą.",
     price: 50,
-    duration: 80,
+    duration: {
+      from: 90,
+      to: 150,
+    },
     enableModal: true,
     modalContent: {
       enableAditionalNote: true,
@@ -71,7 +77,10 @@ export const servicesContent = [
     description:
       "Prabangi ir išskirtinė patirtis, apimanti visą galvos odos, plaukų ir pojūčių harmoniją. Rekomenduojama tiems, kurie ieško maksimalaus efektyvumo, gilaus atsipalaidavimo ir intensyvios plaukų priežiūros.",
     price: 100,
-    duration: 130,
+    duration: {
+      from: 120,
+      to: 150,
+    },
     enableModal: true,
     modalContent: {
       enableAditionalNote: true,
@@ -102,8 +111,10 @@ export const servicesContent = [
     title: "Ritualas vyrams",
     description:
       "Specialiai vyrams sukurtas ritualas, kuriame susijungia gilus atsipalaidavimas, galvos odos priežiūra ir plaukų stiprinimas. Puikiai tinka tiems, kurie jaučia įtampą ar rūpinasi plaukų būkle.",
-    price: 75,
-    duration: 80,
+    price: 60,
+    duration: {
+      from: 70,
+    },
     enableModal: true,
     modalContent: {
       enableAditionalNote: false,

@@ -80,7 +80,7 @@ const Contact = () => {
     >
       <div className="relative order-1 h-[400px] flex-1 lg:order-none lg:h-[720px]">
         <Image
-          src="/hero-1.jpg"
+          src="/hero-2.jpg"
           alt="Hero 1"
           fill
           className="rounded-tl-3xl rounded-tr-[200px] rounded-b-3xl object-cover"
@@ -91,12 +91,12 @@ const Contact = () => {
             <p>P. Kalpoko g. 1, Kaunas</p>
           </span>
           <a
-            href="tel:+4591929387"
+            href="tel:+37062800509 "
             rel="nofollow"
             className="text-text font-marcellus flex items-center gap-2 text-sm transition-colors duration-200 ease-in-out hover:text-neutral-400"
           >
             <Phone strokeWidth={1.5} className="text-primary-dark" />
-            <span>+370 629 00509</span>
+            <span>+370 628 00509 </span>
           </a>
           <a
             href="mailto:labas@nere.lt"

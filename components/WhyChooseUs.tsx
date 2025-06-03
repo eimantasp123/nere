@@ -14,28 +14,28 @@ const content = [
     id: 1,
     title: "Japoniška masažo filosofija",
     description:
-      "Remiamės giliomis tradicijomis – kiekvienas judesys apgalvotas, kad atkurtų vidinę pusiausvyrą ir nuramintų protą.",
+      "Kuriu savo unikalų ritualą, įkvėptą japoniškos tradicijos, bet perteiktą per mano pačios patirtį ir pajautimą. Tai nėra šablonas – tai mano rankų darbas, mano filosofija. Tokios patirties kitur nerasite.",
     icon: <Flower2 className="text-primary size-8 lg:size-11" />,
   },
   {
     id: 2,
     title: "Individualus dėmesys kiekvienam",
     description:
-      "Ritualai pritaikomi pagal jūsų poreikius – nuo streso mažinimo iki galvos odos būklės gerinimo.",
+      "Ritualai pritaikomi pagal Jūsų būseną ir poreikius – nuo streso mažinimo iki galvos odos būklės gerinimo.",
     icon: <UserRoundCheck className="text-primary size-8 lg:size-11" />,
   },
   {
     id: 3,
     title: "Aukščiausios kokybės priemonės",
     description:
-      "Naudojame tik profesionalias, gamtai draugiškas Davines linijos priemones, kurios puoselėja ir plaukus, ir pojūčius.",
+      "Naudojame tik profesionalias, gamtai draugiškas priemones, kurios puoselėja ir plaukus, ir pojūčius.",
     icon: <Droplets className="text-primary size-8 lg:size-11" />,
   },
   {
     id: 4,
     title: "Ramybės oazė mieste",
     description:
-      "Mūsų studijoje laikas sustoja – jauki aplinka, kvapai ir garsai sukuria visišką atsipalaidavimą nuo pirmos minutės.",
+      "Mūsų studijoje laikas sustoja – jauki aplinka, kvapai ir garsai kuria visiško atsipalaidavimo patirtį nuo pirmos minutės.",
     icon: <Leaf className="text-primary size-8 lg:size-11" />,
   },
 ];
@@ -51,6 +51,11 @@ const WhyChooseUs = () => {
       <div className="container mx-auto space-y-6 px-4 py-8 text-center lg:py-20">
         <h6>Kodėl verta rinktis mus</h6>
         <h2>Meistriškumas, kuris ramina kūną ir protą</h2>
+        <p className="mx-auto max-w-6xl text-lg">
+          Tai daugiau nei procedūra – tai patirtis, kuri masažo metu ne tik
+          atpalaiduoja, bet ir giliai gydo galvos odą. Nes spindintys, sveiki
+          plaukai prasideda nuo švarios galvos odos.
+        </p>
         {content && (
           <Carousel
             opts={{

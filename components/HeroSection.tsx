@@ -1,3 +1,4 @@
+import { Facebook, Instagram } from "lucide-react";
 import Image from "next/image";
 
 /**
@@ -17,8 +18,8 @@ async function HeroSection() {
           <p>
             Nere Head Spa – tai daugiau nei grožio procedūra. Tai sąmoningas
             pabėgimas į ramybę, kur rūpestingai atliekami galvos masažo ritualai
-            atgaivina plaukus, atpalaiduoja kūną ir nuramina protą. Kiekvienas
-            apsilankymas – tai kelionė į vidinę pusiausvyrą.
+            atgaivina plaukus, atpalaiduoja kūną ir nuramina protą. Ateik,
+            pasilepink ir pajusk, kaip ramybė tampa tavo kasdienybės dalimi.
           </p>
           <div className="flex gap-2 md:gap-4">
             <a
@@ -28,11 +29,45 @@ async function HeroSection() {
               Paslaugos
             </a>
             <a
-              href="https://watalook.lt/beauty-specialist/nere-head-spa"
+              href="https://book.treatwell.lt/salonas/nere-head-spa/"
               target="_blank"
               className="hover:bg-secondary rounded-full bg-neutral-800 px-8 py-3 text-sm text-white shadow-sm transition-colors duration-200 ease-in-out hover:text-black sm:px-10 lg:hidden"
             >
               Rezervuoti laiką
+            </a>
+            <div className="hidden items-center gap-2 md:gap-2 lg:flex">
+              <span>Sekite mus:</span>
+              <a
+                href="https://www.facebook.com/nere.head.spa"
+                target="_blank"
+                className="bg-background flex h-8 w-8 cursor-pointer items-center justify-center rounded-full transition-all duration-200 ease-in-out hover:-translate-y-[2px]"
+              >
+                <Facebook strokeWidth={1.5} className="size-4" />
+              </a>
+              <a
+                href="https://www.instagram.com/nere_head_spa/"
+                target="_blank"
+                className="bg-background flex h-8 w-8 cursor-pointer items-center justify-center rounded-full transition-all duration-200 ease-in-out hover:-translate-y-[2px]"
+              >
+                <Instagram strokeWidth={1.5} className="size-4" />
+              </a>
+            </div>
+          </div>
+          <div className="flex items-center gap-2 md:gap-2 lg:hidden">
+            <p className="text-sm">Sekite mus:</p>
+            <a
+              href="https://www.facebook.com/nere.head.spa"
+              target="_blank"
+              className="bg-secondary hover:bg-secondary-dark flex h-8 w-8 cursor-pointer items-center justify-center rounded-full transition-all duration-200 ease-in-out hover:-translate-y-[2px]"
+            >
+              <Facebook strokeWidth={1.5} className="size-4" />
+            </a>
+            <a
+              href="https://www.instagram.com/nere_head_spa/"
+              target="_blank"
+              className="bg-secondary hover:bg-secondary-dark flex h-8 w-8 cursor-pointer items-center justify-center rounded-full transition-all duration-200 ease-in-out hover:-translate-y-[2px]"
+            >
+              <Instagram strokeWidth={1.5} className="size-4" />
             </a>
           </div>
         </div>
@@ -42,11 +77,12 @@ async function HeroSection() {
             <Image
               src="/hero-1.jpg"
               alt="Hero image"
-              width={300}
+              width={1000}
               height={550}
               className="h-full w-full rounded-tl-[200px] rounded-tr-3xl rounded-b-3xl"
               style={{
                 objectFit: "cover",
+                objectPosition: "right",
               }}
               priority
             />
@@ -55,12 +91,13 @@ async function HeroSection() {
           {/* Second image (70%) */}
           <div className="h-auto w-[55%] overflow-hidden md:w-[60%]">
             <Image
-              src="/hero-2.jpg"
+              src="/image1.jpg"
               alt="Hero image"
-              width={700}
+              width={1000}
               height={550}
               style={{
                 objectFit: "cover",
+                objectPosition: "right",
               }}
               className="h-full w-full rounded-tl-[200px] rounded-tr-3xl rounded-b-3xl"
               priority
