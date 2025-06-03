@@ -26,7 +26,10 @@ const plusJakartaSans = Plus_Jakarta_Sans({
 });
 
 export const metadata: Metadata = {
-  title: "Nere | Japoniškas galvos masažas Kaune",
+  title: {
+    default: "Nere Head Spa | Japoniškas galvos masažas Kaune",
+    template: "%s | Nere Head Spa",
+  },
   description:
     "Nere Head Spa – tai daugiau nei grožio procedūra. Tai sąmoningas pabėgimas į ramybę, kur rūpestingai atliekami galvos masažo ritualai atgaivina plaukus, atpalaiduoja kūną ir nuramina protą.",
   openGraph: {

@@ -1,12 +1,14 @@
 import nodemailer from "nodemailer";
 
 export async function POST(req: Request) {
-  const { name, email, phone, message, token } = await req.json();
+  const { fullName, email, recipient, message, token, ritual } =
+    await req.json();
 
   // Validate
-  if (!name || !email || !message) {
+  if (!fullName || !email || !ritual || !recipient || !token) {
     return new Response("Missing fields", { status: 400 });
   }
+
   try {
     // Validate reCAPTCHA (v3)
     const recaptchaRes = await fetch(
@@ -42,12 +44,13 @@ export async function POST(req: Request) {
       from: `"Nere.lt" <${process.env.EMAIL_USER}>`,
       to: "labas@nere.lt",
       replyTo: email,
-      subject: `Kontaktų formą | Žinutė nuo: ${name}`,
+      subject: `Dovanų kupono užklausa`,
       text: message,
-      html: `<p><strong>Vardas:</strong> ${name}<br/>
+      html: `<p><strong>Žinutė nuo:</strong> ${fullName}<br/>
             <strong>El. Paštas:</strong> ${email}<br/>
-            <strong>Telefono numeris:</strong> ${phone}<br/>
-            <strong>Žinutė:</strong> ${message}</p>`,
+            <strong>Kupono gavėjo vardas:</strong> ${recipient}<br/>
+            <strong>Ritualas:</strong> ${ritual}<br/>
+            ${message ? `<strong>Žinutė:</strong> ${message}</p>` : null}`,
     });
 
     return new Response("El. laiškas išssiųstas sėkmingai.", { status: 200 });
