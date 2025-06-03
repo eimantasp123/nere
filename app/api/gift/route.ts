@@ -1,4 +1,4 @@
-import nodemailer from "nodemailer";
+import { transporter } from "../_utils/transporter";
 
 export async function POST(req: Request) {
   const { fullName, email, recipient, message, token, ritual } =
@@ -25,20 +25,6 @@ export async function POST(req: Request) {
       console.error("reCAPTCHA validation failed", recaptchaData);
       return new Response("reCAPTCHA failed", { status: 400 });
     }
-
-    // Setup nodemailer
-    const transporter = nodemailer.createTransport({
-      host: "smtp.hostinger.com",
-      port: 465,
-      secure: true,
-      auth: {
-        user: process.env.EMAIL_USER,
-        pass: process.env.EMAIL_PASS,
-      },
-      tls: {
-        rejectUnauthorized: process.env.NODE_ENV === "production",
-      },
-    });
 
     await transporter.sendMail({
       from: `"Nere.lt" <${process.env.EMAIL_USER}>`,
