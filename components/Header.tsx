@@ -91,6 +91,14 @@ const Header = () => {
 
         {/* Mobile Navigation */}
         <div className="flex w-full items-center justify-end gap-4 lg:w-[250px]">
+          <Link
+            href="/dovanu-kuponas"
+            prefetch
+            className="hover:bg-primary bg-primary cursor-pointer rounded-full px-6 py-2 text-sm transition-colors duration-200 ease-in-out hover:text-black lg:hidden"
+          >
+            Dovanų kuponas
+          </Link>
+
           {menuOpen ? (
             <X
               className="lg:hidden"
