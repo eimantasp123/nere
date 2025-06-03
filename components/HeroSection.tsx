@@ -36,39 +36,11 @@ async function HeroSection() {
               Rezervuoti laiką
             </a>
             <div className="hidden items-center gap-2 md:gap-2 lg:flex">
-              <span>Sekite studijos veiklą:</span>
-              <a
-                href="https://www.facebook.com/nere.head.spa"
-                target="_blank"
-                className="bg-background flex h-8 w-8 cursor-pointer items-center justify-center rounded-full transition-all duration-200 ease-in-out hover:-translate-y-[2px]"
-              >
-                <Facebook strokeWidth={1.5} className="size-4" />
-              </a>
-              <a
-                href="https://www.instagram.com/nere_head_spa/"
-                target="_blank"
-                className="bg-background flex h-8 w-8 cursor-pointer items-center justify-center rounded-full transition-all duration-200 ease-in-out hover:-translate-y-[2px]"
-              >
-                <Instagram strokeWidth={1.5} className="size-4" />
-              </a>
+              <SocialLinks />
             </div>
           </div>
           <div className="flex items-center gap-2 md:gap-2 lg:hidden">
-            <p className="text-sm">Sekite studijos veiklą:</p>
-            <a
-              href="https://www.facebook.com/nere.head.spa"
-              target="_blank"
-              className="bg-secondary hover:bg-secondary-dark flex h-8 w-8 cursor-pointer items-center justify-center rounded-full transition-all duration-200 ease-in-out hover:-translate-y-[2px]"
-            >
-              <Facebook strokeWidth={1.5} className="size-4" />
-            </a>
-            <a
-              href="https://www.instagram.com/nere_head_spa/"
-              target="_blank"
-              className="bg-secondary hover:bg-secondary-dark flex h-8 w-8 cursor-pointer items-center justify-center rounded-full transition-all duration-200 ease-in-out hover:-translate-y-[2px]"
-            >
-              <Instagram strokeWidth={1.5} className="size-4" />
-            </a>
+            <SocialLinks />
           </div>
         </div>
         <div className="flex h-[250px] flex-1 gap-4 sm:h-[300px] md:h-[550px] md:gap-8">
@@ -110,5 +82,27 @@ async function HeroSection() {
     </section>
   );
 }
+
+const SocialLinks = () => {
+  return (
+    <>
+      <span>Sekite studijos veiklą:</span>
+      <a
+        href="https://www.facebook.com/nere.head.spa"
+        target="_blank"
+        className="bg-background flex h-8 w-8 cursor-pointer items-center justify-center rounded-full transition-all duration-200 ease-in-out hover:-translate-y-[2px]"
+      >
+        <Facebook strokeWidth={1.5} className="size-4" />
+      </a>
+      <a
+        href="https://www.instagram.com/nere_head_spa/"
+        target="_blank"
+        className="bg-background flex h-8 w-8 cursor-pointer items-center justify-center rounded-full transition-all duration-200 ease-in-out hover:-translate-y-[2px]"
+      >
+        <Instagram strokeWidth={1.5} className="size-4" />
+      </a>
+    </>
+  );
+};
 
 export default HeroSection;
