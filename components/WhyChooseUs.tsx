@@ -49,7 +49,7 @@ const WhyChooseUs = () => {
   return (
     <section className="bg-background">
       <div className="container mx-auto space-y-6 px-4 py-8 text-center lg:py-20">
-        <h6>Kodėl verta rinktis mus</h6>
+        <h6>Kodėl verta apsilankyti</h6>
         <h2>Meistriškumas, kuris ramina kūną ir protą</h2>
         <p className="mx-auto max-w-6xl text-lg">
           Tai daugiau nei procedūra – tai patirtis, kuri masažo metu ne tik

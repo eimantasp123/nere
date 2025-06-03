@@ -110,12 +110,12 @@ const Contact = () => {
       </div>
       <div className="flex-1 space-y-6">
         <h6>Kontaktai</h6>
-        <h2>Susisiekite su mumis</h2>
+        <h2>Susisiekite su manimi</h2>
         <p>
           Norite pasilepinti japonišku galvos masažu ar turite klausimų apie
-          mūsų paslaugas? Užpildykite žemiau esančią formą arba susisiekite su
-          mumis tiesiogiai – mielai atsakysime į visus Jūsų klausimus ir
-          padėsime pasirinkti tinkamiausią laiką apsilankymui.
+          mano paslaugas? Užpildykite žemiau esančią formą arba susisiekite su
+          manimi tiesiogiai – mielai atsakysiu į visus Jūsų klausimus ir padėsiu
+          pasirinkti tinkamiausią laiką apsilankymui.
         </p>
         <form
           onSubmit={handleSubmit(onSubmit)}
