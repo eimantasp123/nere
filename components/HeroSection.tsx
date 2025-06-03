@@ -36,7 +36,7 @@ async function HeroSection() {
               Rezervuoti laiką
             </a>
             <div className="hidden items-center gap-2 md:gap-2 lg:flex">
-              <span>Sekite studijo veiklą:</span>
+              <span>Sekite studijos veiklą:</span>
               <a
                 href="https://www.facebook.com/nere.head.spa"
                 target="_blank"
