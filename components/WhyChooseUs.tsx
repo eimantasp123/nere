@@ -51,7 +51,7 @@ const WhyChooseUs = () => {
       <div className="container mx-auto space-y-6 px-4 py-8 text-center lg:py-20">
         <h6>Kodėl verta apsilankyti</h6>
         <h2>Meistriškumas, kuris ramina kūną ir protą</h2>
-        <p className="mx-auto max-w-6xl text-lg">
+        <p className="text-md mx-auto max-w-6xl">
           Tai daugiau nei procedūra – tai patirtis, kuri masažo metu ne tik
           atpalaiduoja, bet ir giliai gydo galvos odą. Nes spindintys, sveiki
           plaukai prasideda nuo švarios galvos odos.
