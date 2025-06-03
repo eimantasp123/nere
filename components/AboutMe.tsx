@@ -22,7 +22,7 @@ const AboutMe = () => {
           <h6>Apie mane</h6>
           <h2>Ritualai ramybei, kuriuos kuriu iš širdies</h2>
           <hr className="h-[2px] w-24 border-neutral-400" />
-          <p className="text-text leading-[28px]">
+          <p className="text-text text-justify leading-[28px]">
             Esu Neringa – „Nere Head Spa“ įkūrėja ir sertifikuota meistrė. Po
             ilgos kelionės per grožio industriją ir asmeninį tobulėjimą atradau
             japoniško galvos masažo meno galią. Kiekvienas seansas man – tai ne

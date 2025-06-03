@@ -14,7 +14,7 @@ const content = [
     id: 1,
     title: "Japoniška masažo filosofija",
     description:
-      "Kuriu savo unikalų ritualą, įkvėptą japoniškos tradicijos, bet perteiktą per mano pačios patirtį ir pajautimą. Tai nėra šablonas – tai mano rankų darbas, mano filosofija. Tokios patirties kitur nerasite.",
+      "Kuriu savo unikalų ritualą, įkvėptą japoniškos tradicijos, bet perteiktą per mano pačios patirtį ir pajautimą. Tai nėra šablonas – tai mano rankų darbas, mano filosofija.",
     icon: <Flower2 className="text-primary size-8 lg:size-11" />,
   },
   {
@@ -28,14 +28,14 @@ const content = [
     id: 3,
     title: "Aukščiausios kokybės priemonės",
     description:
-      "Naudojame tik profesionalias, gamtai draugiškas priemones, kurios puoselėja ir plaukus, ir pojūčius.",
+      "Naudoju tik profesionalias, gamtai draugiškas priemones, kurios puoselėja ir plaukus, ir pojūčius.",
     icon: <Droplets className="text-primary size-8 lg:size-11" />,
   },
   {
     id: 4,
     title: "Ramybės oazė mieste",
     description:
-      "Mūsų studijoje laikas sustoja – jauki aplinka, kvapai ir garsai kuria visiško atsipalaidavimo patirtį nuo pirmos minutės.",
+      "Mano studijoje laikas sustoja – jauki aplinka, kvapai ir garsai kuria visiško atsipalaidavimo patirtį nuo pirmos minutės.",
     icon: <Leaf className="text-primary size-8 lg:size-11" />,
   },
 ];
