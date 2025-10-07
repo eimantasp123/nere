@@ -45,7 +45,6 @@ const GiftSchema = z
     message: z.string().optional(),
   })
   .superRefine((data, ctx) => {
-    // If "Dovanų kuponas už pasirinktą sumą" is selected, voucherAmount is required
     if (data.ritual === "Dovanų kuponas už pasirinktą sumą") {
       if (!data.voucherAmount || Number(data.voucherAmount) <= 0) {
         ctx.addIssue({
