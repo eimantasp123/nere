@@ -11,6 +11,7 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
+import { SelectionButton } from "@/components/ui/selectionButton";
 import { Textarea } from "@/components/ui/textarea";
 import { options } from "@/content/gift";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -23,9 +24,27 @@ import { Controller, useForm } from "react-hook-form";
 import { toast } from "sonner";
 import { z } from "zod";
 
+const voucherOptions = [
+  {
+    value: "elektroninis",
+    label: "Elektroninis kuponas",
+    description: "Atsiunčiamas į el. paštą tą pačią dieną",
+  },
+  {
+    value: "fizinis",
+    label: "Fizinis kuponas",
+    description: "Atsiėmimas studijoje, iš anksto sutartu laiku",
+  },
+] as {
+  value: "elektroninis" | "fizinis";
+  label: string;
+  description: string;
+}[];
+
 const GiftSchema = z
   .object({
     fullName: z.string().min(2, "Vardas yra privalomas"),
+    phoneNumber: z.string().min(5, "Telefono numeris yra privalomas"),
     recipient: z.string().min(2, "Gavėjo vardas yra privalomas"),
     email: z.string().email("Neteisingas el. pašto adresas"),
     ritual: z
@@ -42,6 +61,9 @@ const GiftSchema = z
       .refine((val) => !val || !isNaN(Number(val)), {
         message: "Kupono suma turi būti skaičius",
       }),
+    voucherType: z.enum(["fizinis", "elektroninis"], {
+      required_error: "Pasirinkite kupono tipą",
+    }),
     message: z.string().optional(),
   })
   .superRefine((data, ctx) => {
@@ -68,11 +90,13 @@ export default function GiftCardPage() {
     reset,
     control,
     watch,
+    setValue,
     formState: { errors, isSubmitting },
   } = useForm<GiftFormData>({
     resolver: zodResolver(GiftSchema),
     defaultValues: {
       fullName: "",
+      phoneNumber: "",
       recipient: "",
       email: "",
       ritual: "",
@@ -122,17 +146,33 @@ export default function GiftCardPage() {
       <section className="container mx-auto flex flex-col gap-16 px-4 py-16 md:flex-row">
         <form onSubmit={handleSubmit(onSubmit)} className="flex flex-1 gap-6">
           <div className="w-full space-y-6">
-            <div>
-              <Label className="pb-3">Jūsų vardas, pavardė</Label>
-              <Input
-                className="bg-background-primary"
-                {...register("fullName")}
-              />
-              {errors.fullName && (
-                <p className="text-destructive text-xs">
-                  {errors.fullName.message}
-                </p>
-              )}
+            <div className="flex flex-col gap-5 xl:flex-row">
+              <div className="flex-1/2">
+                <Label className="pb-3">Jūsų vardas, pavardė</Label>
+                <Input
+                  className="bg-background-primary"
+                  {...register("fullName")}
+                />
+                {errors.fullName && (
+                  <p className="text-destructive text-xs">
+                    {errors.fullName.message}
+                  </p>
+                )}
+              </div>
+
+              <div className="flex-1/2">
+                <Label className="pb-3">Jūsų telefono numeris</Label>
+                <Input
+                  className="bg-background-primary"
+                  type="number"
+                  {...register("phoneNumber")}
+                />
+                {errors.phoneNumber && (
+                  <p className="text-destructive text-xs">
+                    {errors.phoneNumber.message}
+                  </p>
+                )}
+              </div>
             </div>
 
             <div>
@@ -237,6 +277,27 @@ export default function GiftCardPage() {
             </div>
 
             <div>
+              <Label className="pb-3">Pasirinkite dovanų kupono tipą:</Label>
+              <div className="flex flex-col gap-4 xl:flex-row">
+                {voucherOptions.map((opt) => (
+                  <SelectionButton
+                    key={opt.value}
+                    label={opt.label}
+                    description={opt.description}
+                    selected={watch("voucherType") === opt.value}
+                    onClick={() => setValue("voucherType", opt.value)}
+                  />
+                ))}
+              </div>
+
+              {errors.voucherType && (
+                <p className="text-destructive text-xs">
+                  {errors.voucherType.message}
+                </p>
+              )}
+            </div>
+
+            <div>
               <Label className="pb-3">Jūsų žinutė (nebūtina)</Label>
               <Textarea
                 className="bg-background-primary min-h-[150px]"
@@ -257,7 +318,7 @@ export default function GiftCardPage() {
           </div>
         </form>
 
-        <div className="relative h-[300px] w-full sm:h-[400px] md:h-auto md:w-[500px] lg:h-[600px]">
+        <div className="relative h-[300px] w-full sm:h-[400px] md:h-auto md:w-[500px]">
           <Image
             src="/kuponai.jpeg"
             alt="Dovanų kuponas"
