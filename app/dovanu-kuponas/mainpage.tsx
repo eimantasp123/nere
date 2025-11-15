@@ -149,10 +149,7 @@ export default function GiftCardPage() {
             <div className="flex flex-col gap-5 xl:flex-row">
               <div className="flex-1/2">
                 <Label className="pb-3">Jūsų vardas, pavardė</Label>
-                <Input
-                  className="bg-background-primary"
-                  {...register("fullName")}
-                />
+                <Input className="bg-[#F6F5F1]!" {...register("fullName")} />
                 {errors.fullName && (
                   <p className="text-destructive text-xs">
                     {errors.fullName.message}
@@ -163,7 +160,7 @@ export default function GiftCardPage() {
               <div className="flex-1/2">
                 <Label className="pb-3">Jūsų telefono numeris</Label>
                 <Input
-                  className="bg-background-primary"
+                  className="bg-[#F6F5F1]!"
                   type="number"
                   {...register("phoneNumber")}
                 />
@@ -177,10 +174,7 @@ export default function GiftCardPage() {
 
             <div>
               <Label className="pb-3">Kam bus skirtas kuponas (vardas)</Label>
-              <Input
-                className="bg-background-primary"
-                {...register("recipient")}
-              />
+              <Input className="bg-[#F6F5F1]!" {...register("recipient")} />
               {errors.recipient && (
                 <p className="text-destructive text-xs">
                   {errors.recipient.message}
@@ -225,7 +219,7 @@ export default function GiftCardPage() {
                 <div className="w-full lg:w-[200px]">
                   <Label className="pb-3">Kupono suma (€)</Label>
                   <Input
-                    className="bg-background-primary"
+                    className="bg-[#F6F5F1]!"
                     {...register("voucherAmount")}
                   />
                   {errors.voucherAmount && (
@@ -265,7 +259,7 @@ export default function GiftCardPage() {
             <div>
               <Label className="pb-3">Jūsų el. paštas</Label>
               <Input
-                className="bg-background-primary"
+                className="bg-[#F6F5F1]!"
                 type="email"
                 {...register("email")}
               />
@@ -285,7 +279,12 @@ export default function GiftCardPage() {
                     label={opt.label}
                     description={opt.description}
                     selected={watch("voucherType") === opt.value}
-                    onClick={() => setValue("voucherType", opt.value)}
+                    onClick={() =>
+                      setValue("voucherType", opt.value, {
+                        shouldValidate: true,
+                        shouldDirty: true,
+                      })
+                    }
                   />
                 ))}
               </div>
@@ -300,7 +299,7 @@ export default function GiftCardPage() {
             <div>
               <Label className="pb-3">Jūsų žinutė (nebūtina)</Label>
               <Textarea
-                className="bg-background-primary min-h-[150px]"
+                className="min-h-[150px] bg-[#F6F5F1]!"
                 rows={3}
                 {...register("message")}
               />
