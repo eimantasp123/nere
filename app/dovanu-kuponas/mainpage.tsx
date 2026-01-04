@@ -41,6 +41,51 @@ const voucherOptions = [
   description: string;
 }[];
 
+const voucherRules = [
+  {
+    description:
+      "Fizinius kuponus galima atsiimti tik iš anksto susitarus dėl laiko. Jei tuo metu vyksta ritualas, kupono perdavimas nėra vykdomas, nes visas dėmesys skiriamas klientui ir jo patirčiai.",
+  },
+  {
+    description:
+      "Elektroniai dovanų kuponai siunčiami tą pačią dieną po apmokėjimo.",
+  },
+  {
+    description:
+      "Dovanų kuponas atsiunčiamas el. paštu PDF formatu - tvarkingas, paruoštas dovanoti.",
+  },
+  {
+    description:
+      "Dovanų kuponas galioja 6 (šešis) mėnesius nuo įsigijimo dienos. Pasibaigus galiojimui – nepratęsiamas.",
+  },
+  {
+    description:
+      "Dovanų kuponas atgal nepriimamas ir nėra keičiamas į pinigus.",
+  },
+  {
+    description:
+      "Jei pasirenkamos paslaugos kaina viršija kupono vertę, trūkstamą sumą galima sumokėti grynaisiais arba pavedimu.",
+  },
+  {
+    description:
+      "Jei paslaugos kaina mažesnė už kupono vertę, skirtumas negrąžinimas.",
+  },
+  {
+    description:
+      "Atšaukus vizitą mažiau nei prieš 48 valandas, kuponas laikomas panaudotu.",
+  },
+  {
+    description: "Pametus ar sugadinus kuponą - naujas neišduodamas.",
+  },
+  {
+    description: "Dovanų kuponas skirtas tik paslaugoms, ne produktams.",
+  },
+  {
+    description:
+      "Atvykus į procedūra privalomą turėti dovanų kuponą, kitu atveju procdūra nebus atlikta.",
+  },
+];
+
 const GiftSchema = z
   .object({
     fullName: z.string().min(2, "Vardas yra privalomas"),
@@ -83,6 +128,7 @@ type GiftFormData = z.infer<typeof GiftSchema>;
 export default function GiftCardPage() {
   const recaptchaRef = useRef<ReCAPTCHAType>(null);
   const [open, setOpen] = useState(false);
+  const [openRules, setOpenRules] = useState(false);
 
   const {
     register,
@@ -288,6 +334,23 @@ export default function GiftCardPage() {
                   />
                 ))}
               </div>
+              <Dialog open={openRules} onOpenChange={setOpenRules}>
+                <DialogTrigger asChild>
+                  <div className="cursor-pointer pt-3 text-[13px] font-semibold text-black/80 transition-colors duration-200 ease-in-out hover:text-black/60 md:text-end">
+                    Dovanų kupono įsigijimo ir naudojimosi taisyklės
+                  </div>
+                </DialogTrigger>
+                <DialogContent className="max-h-[90vh] w-full overflow-y-auto md:h-auto md:w-fit">
+                  <DialogTitle className="text-[16px] font-semibold md:text-lg">
+                    Dovanų kupono įsigijimo ir naudojimosi taisyklės
+                  </DialogTitle>
+                  <ul className="list-disc space-y-2 pl-5 text-sm">
+                    {voucherRules.map((rule, index) => (
+                      <li key={index}>{rule.description}</li>
+                    ))}
+                  </ul>
+                </DialogContent>
+              </Dialog>
 
               {errors.voucherType && (
                 <p className="text-destructive text-xs">
